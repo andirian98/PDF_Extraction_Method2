@@ -1,0 +1,330 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Page2_Activity" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_reg_num" Type="InArgument(x:String)" />
+    <x:Property Name="in_business_name" Type="InArgument(x:String)" />
+    <x:Property Name="in_date_of_inc" Type="InArgument(x:String)" />
+    <x:Property Name="in_country_inc" Type="InArgument(x:String)" />
+    <x:Property Name="in_country_dom" Type="InArgument(x:String)" />
+    <x:Property Name="in_output_text" Type="InArgument(x:String)" />
+    <x:Property Name="in_email1" Type="InArgument(x:String)" />
+    <x:Property Name="in_business_email_addr" Type="InArgument(x:String)" />
+    <x:Property Name="in_contact_num1" Type="InArgument(x:String)" />
+    <x:Property Name="in_business_telephone" Type="InArgument(x:String)" />
+    <x:Property Name="in_fax" Type="InArgument(x:String)" />
+    <x:Property Name="in_office_num" Type="InArgument(x:String)" />
+    <x:Property Name="in_country_expose_primary" Type="InArgument(x:String)" />
+    <x:Property Name="in_country_expose_secondary" Type="InArgument(x:String)" />
+    <x:Property Name="in_product_code" Type="InArgument(x:String)" />
+    <x:Property Name="in_product_name" Type="InArgument(x:String)" />
+    <x:Property Name="in_primary_contact_person_name1" Type="InArgument(x:String)" />
+    <x:Property Name="in_signing_condition" Type="InArgument(x:String)" />
+    <x:Property Name="in_customer_disclosure" Type="InArgument(x:String)" />
+    <x:Property Name="in_constitution" Type="InArgument(x:String)" />
+    <x:Property Name="in_business_premise" Type="InArgument(x:String)" />
+    <x:Property Name="out_data_table" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,5384</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Page2_Activity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="31">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Page2_Activity" sap:VirtualizedContainerService.HintSize="493,5319" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="output_text_split" />
+      <Variable x:TypeArguments="sd:DataTable" Name="data_table" />
+      <Variable x:TypeArguments="x:String" Name="mailing_address_last" />
+      <Variable x:TypeArguments="x:String" Name="business_address_last" />
+      <Variable x:TypeArguments="x:String" Name="registered_address_last" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[out_data_table]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="451,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Business_x0020_Name&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Registration_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020_of_x0020_Incorporation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Registered_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Business_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Mailing_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Constitution&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Current_x0020_Business_x0020_Premise_x0028_s_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Incorporation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Domicile&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Primary_x0020_Exposure&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Secondary_x0020_Exposure&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Business_x0020_Telephone&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Business_x0020_Email_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fax&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Customer_x0020_Disclosure&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Primary_x0020_Contact_x0020_Person_x0020_Name1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Contact_x0020_Number1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Office_x0020_No&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Email1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Signing_x0020_Condition&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Code&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <Assign sap:VirtualizedContainerService.HintSize="451,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[output_text_split]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[in_output_text.Split(New String() {Environment.NewLine},StringSplitOptions.None)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_output As New List(Of String)&#xA;For Each rowString As String In output &#xA;&#x9;Try&#xA;&#x9;&#x9;Dim regex As Regex = New Regex(&quot;[A-Z{1,1}](\d{1,1})\s[a-zA-Z0-9\s]+[a-zA-Z0-9\s]+&quot;)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;Dim match As Match = regex.Match(rowString)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;If match.Success Then&#xA;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;&#x9;list_output.Add(match.Value)&#xA;&#x9;&#x9;End If&#xA;&#x9;&#xA;&#x9;Catch ex As Exception&#xA;&#x9;&#xA;&#x9;End Try&#xA;Next&#xA;&#xA;For Each list As String In list_output &#xA;&#x9;Console.WriteLine(list)&#xA;Next&#xA;&#xA;business_name = list_output(0)&#xA;primary_contact_person = list_output(1)" DisplayName="Invoke code Business Name and Primary Contact Person Name1" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_13">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="output">[output_text_split]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="business_name">[in_business_name]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="primary_contact_person">[in_primary_contact_person_name1]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xA;&#x9;Dim regex As Regex = New Regex(&quot;\d{3,}[A-Z]&quot;)&#xA;&#x9;&#xA;&#x9;Dim match As Match = regex.Match(output)&#xA;&#x9;&#xA;&#x9;If match.Success Then&#xA;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;reg_num = match.Value&#xA;&#x9;End If&#xA;&#xA;Catch ex As Exception&#xA;&#x9;reg_num = Nothing&#xA;&#xA;End Try" DisplayName="Invoke code Registration Number" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="output">[in_output_text]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="reg_num">[in_reg_num]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xA;&#x9;Dim regex As Regex = New Regex(&quot;(?:(?:(?:(?:0?[13578]|1[02])(?&lt;first&gt;\/|-|\.)31)\k&lt;first&gt;|(?:(?:0?[13-9]|1[0-2])(?&lt;second&gt;\/|-|\.)(?:29|30)\k&lt;second&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:0?2(?&lt;third&gt;\/|-|\.)29\k&lt;third&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:(?:0?[1-9])|(?:1[0-2]))(?&lt;fourth&gt;\/|-|\.)(?:0?[1-9]|1\d|2[0-8])\k&lt;fourth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:(?:(?:January|March|May|Jul|August|October|December)(?&lt;fifth&gt;\/|-|\s)31)\k&lt;fifth&gt;|(?:(?:January|March|April|May|June|July|August|September|October|November|December)(?&lt;sixth&gt;\/|-|\s)(?:29|30)\k&lt;sixth&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:February(?&lt;seventh&gt;\/|-|\s)29\k&lt;seventh&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:January|February|March|April|May|June|Jul|August|September|October|November|December)(?&lt;eighth&gt;\/|-|\s)(?:0?[1-9]|1\d|2[0-8])\k&lt;eighth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2}))+&quot;)&#xA;&#x9;&#xA;&#x9;Dim match As Match = regex.Match(output)&#xA;&#x9;&#xA;&#x9;If match.Success Then&#xA;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;date_of_inc = match.Value&#xA;&#x9;Else&#xA;&#x9;&#x9;date_of_inc = &quot;N/A&quot;&#xA;&#x9;End If&#xA;&#x9;&#xA;Catch ex As Exception&#xA;&#xA;End Try" DisplayName="Invoke code Date of Incorporation" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_16">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="output">[in_output_text]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="date_of_inc">[in_date_of_inc]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim List_Country As New List(Of String) &#xA;'Dim Array_Removed() = {&quot;Country of Incorporation&quot;,&quot;Country of Domicile&quot;, &quot;Country of Primary Exposure&quot;,&quot;Country of Secondary&quot;}&#xA;&#xA;For Each Word As String In output&#xA;&#x9;If Word.Contains(&quot;Country&quot;) Then&#xA;        If Word.Contains(&quot;MALAYSIA&quot;) Then&#xA;&#x9;&#x9;&#x9;&#x9;List_Country.Add(&quot;MALAYSIA&quot;)&#xA;&#x9;&#x9;&#x9;Else&#xA;&#x9;&#x9;&#x9;&#x9;List_Country.Add(&quot;N\A&quot;)&#xA;&#x9;&#x9;&#x9;End If&#xA;        End If&#xA;Next&#xA;&#xA;&#xA;Console.WriteLine(&quot;Result of Country: &quot;)&#xA;'For Each list As String In List_Country&#xA;'&#x9;Console.WriteLine(list)&#xA;'Next&#xA;&#xA;Console.WriteLine(List_Country(0).ToString)&#xA;Console.WriteLine(List_Country(1).ToString)&#xA;Console.WriteLine(List_Country(2).ToString)&#xA;Console.WriteLine(List_Country(3).ToString)&#xA;&#xA;incorporation = List_Country(0).ToString&#xA;domicile = List_Country(1).ToString&#xA;primary_expose = List_Country(2).ToString&#xA;secondary_expose = List_Country(3).ToString" DisplayName="Invoke code Country of Incorporation, Domicile, Primary and Secondary Exposure" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_8">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="output">[output_text_split]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="incorporation">[in_country_inc]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="domicile">[in_country_dom]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="primary_expose">[in_country_expose_primary]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="secondary_expose">[in_country_expose_secondary]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim regex As Regex = New Regex(&quot;(\d{5,5}\s)[a-zA-Z0-9\s]+(\.)?[a-zA-Z0-9\s]+&quot;)&#x9;&#xD;&#xA;&#xD;&#xA;'searching for the final address in array&#xD;&#xA;For Each Word As String In output&#xD;&#xA;&#x9;If Word.Contains(&quot;Registered Address&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;Dim match As Match = regex.Match(output(Array.IndexOf(output, Word)+1))&#xD;&#xA;&#x9;&#x9;&#x9;If match.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;     Console.WriteLine(&quot;RESULT of Address: [{0}]&quot;, match.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; registered_address = output(Array.IndexOf(output, Word)-1).ToString + &quot; &quot; + output(Array.IndexOf(output, Word)).Replace(&quot;Registered Address&quot;,&quot;&quot;).ToString  + &quot; &quot; + match.Value &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;registered_address = &quot;N/A&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;If Word.Contains(&quot;Business Address&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Dim match As Match = regex.Match(output(Array.IndexOf(output, Word)+1))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;If match.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;     Console.WriteLine(&quot;RESULT of Address: [{0}]&quot;, match.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; business_address =  output(Array.IndexOf(output, Word)-1).ToString + &quot; &quot; + output(Array.IndexOf(output, Word)).Replace(&quot;Business Address&quot;,&quot;&quot;).ToString  + &quot; &quot; + match.Value &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;business_address = &quot;N/A&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;If Word.Contains(&quot;Mailing Address&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Dim match As Match = regex.Match(output(Array.IndexOf(output, Word)+1))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;If match.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;     Console.WriteLine(&quot;RESULT of Address: [{0}]&quot;, match.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; mailing_address =  output(Array.IndexOf(output, Word)-1).ToString + &quot; &quot; + output(Array.IndexOf(output, Word)).Replace(&quot;Mailing Address&quot;,&quot;&quot;).ToString  + &quot; &quot; + match.Value &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;mailing_address = &quot;N/A&quot;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;Next&#xD;&#xA;&#xD;&#xA;Console.WriteLine(&quot;Registered Address: &quot; + registered_address)&#xD;&#xA;Console.WriteLine(&quot;Business Address: &quot; + business_address)&#xD;&#xA;Console.WriteLine(&quot;Mailing Address: &quot; + mailing_address)&#xD;&#xA;" DisplayName="Invoke code Registered Address, Business Address and Mailing Address" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_17">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="output">[output_text_split]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="business_address">[business_address_last]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="mailing_address">[mailing_address_last]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="registered_address">[registered_address_last]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:CommentOut DisplayName="Comment Out Don't TOUCH!!!" sap:VirtualizedContainerService.HintSize="451,352" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,264" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim List_Address_Last As New List(Of String) &#xA;For Each Word As String In output&#xA;Try&#xA;&#x9;&#x9;Dim regex As Regex = New Regex(&quot;(\d{5,5}\s)[a-zA-Z0-9\s]+(\.)?[a-zA-Z0-9\s]+&quot;)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;Dim match As Match = regex.Match(Word)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;If match.Success Then&#xA;&#x9;&#x9;&#x9;     Console.WriteLine(&quot;RESULT of Address: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;&#x9; List_Address_Last.Add(match.Value)&#xA;&#x9;&#x9;End If&#xA;&#x9;&#xA;&#x9;Catch ex As Exception&#xA;&#x9;&#xA;&#x9;End Try&#xA;Next&#xA;Console.WriteLine(&quot;Result: &quot;)&#xA;For Each list As String In List_Address_Last&#xA;&#x9;Console.WriteLine(list)&#xA;Next&#xA;&#xA;business_address_last = List_Address_Last(0)&#xA;mailing_address_last = List_Address_Last(1)" DisplayName="Invoke code Business Address and Mailing Address" sap:VirtualizedContainerService.HintSize="358,174" sap2010:WorkflowViewState.IdRef="InvokeCode_11">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="s:String[]" x:Key="output">[output_text_split]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="business_address_last">[business_address_last]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="mailing_address_last">[mailing_address_last]</OutArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:IfElseIf DisplayName="Else If Constitutions" sap:VirtualizedContainerService.HintSize="451,634" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+      <ui:IfElseIf.ConditionBlocks>
+        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+          <ui:IfElseIfBlock BlockType="If" Condition="[in_output_text.Contains(&quot;Sdn&quot;)]">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="358,70" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[in_constitution]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">Sdn Bhd</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_output_text.Contains(&quot;Enterprise&quot;)]">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,150" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[in_constitution]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">Enterprise</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+        </sc:BindingList>
+      </ui:IfElseIf.ConditionBlocks>
+    </ui:IfElseIf>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="If output.Contains(&quot;Own&quot;) Then&#xA;&#x9;business_premise = &quot;Own Property&quot;&#xA;Else If output.Contains(&quot;Other&quot;) Then&#xA;&#x9;business_premise = &quot;Other Property&quot;&#xA;Else&#xA;&#x9;business_premise = &quot;N/A&quot;&#xA;End If" DisplayName="Invoke code Current Business Premise(s)" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_18">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="output">[in_output_text]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="business_premise">[in_business_premise]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_email As New List(Of String)&#xA;For Each outputString As String In output&#xA;&#x9;Try&#xA;&#x9;&#x9;Dim regex As Regex = New Regex(&quot;(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|&quot; + &quot;(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*&quot;+&quot;)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])&quot;)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;Dim match As Match = regex.Match(outputString)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;If match.Success Then&#xA;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;&#x9;list_email.Add(match.Value)&#xA;&#x9;&#x9;End If&#xA;&#x9;&#xA;&#x9;Catch ex As Exception&#xA;&#x9;&#xA;&#x9;End Try&#xA;Next&#xA;&#xA;business_email_addr = list_email(0)&#xA;email_1 = list_email(1)&#xA;" DisplayName="Invoke code Business Email Address and Email1" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="output">[output_text_split]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="business_email_addr">[in_business_email_addr]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="email_1">[in_email1]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xA;&#x9;Dim regex As Regex = New Regex(&quot;(\+?6?01)?(\(?[0-9]{3}\)?|[0-9]{8})( |-)?([0-9]{8}( |-)?[0-9]{8}|[a-zA-Z0-9]{8})&quot;)&#xA;&#x9;&#xA;&#x9;Dim match As Match = regex.Match(output)&#xA;&#x9;&#xA;&#x9;If match.Success Then&#xA;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;contact_num = match.Value&#xA;&#x9;End If&#xA;&#xA;Catch ex As Exception&#xA;&#x9;contact_num = Nothing&#xA;&#xA;End Try" DisplayName="Invoke code Contact Number1" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="output">[in_output_text]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="contact_num">[in_contact_num1]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_phone_num As New List(Of String)&#xA;For Each outputString As String In output_array&#xA;&#x9;Try&#xA;&#x9;&#x9;Dim regex As Regex = New Regex(&quot;(\+?6?03)?(\(?[0-9]{3}\)?|[0-9]{8})( |-)?([0-9]{8}( |-)?[0-9]{8}|[a-zA-Z0-9]{8})&quot;)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;Dim match As Match = regex.Match(outputString)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;If outputString.Contains(&quot;Business Telephone&quot;) Or outputString.Contains(&quot;Fax&quot;) Or outputString.Contains(&quot;Office No&quot;)&#xA;&#x9;&#x9;&#x9;If match.Success Then&#xA;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;list_phone_num.Add(match.Value)&#xA;&#x9;&#x9;&#x9;&#x9;Else &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;list_phone_num.Add(&quot;N\A&quot;)&#xA;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;&#xA;&#x9;Catch ex As Exception&#xA;&#x9;&#xA;&#x9;End Try&#xA;Next&#xA;&#xA;business_phone = list_phone_num(0)&#xA;fax = list_phone_num(1)&#xA;office_num = list_phone_num(2)&#xA;" DisplayName="Invoke code Business Number, Fax and Office No" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_6">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="output_array">[output_text_split]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="business_phone">[in_business_telephone]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="fax">[in_fax]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="office_num">[in_office_num]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:IfElseIf DisplayName="Else If for Signing Condition" sap:VirtualizedContainerService.HintSize="451,835" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+      <ui:IfElseIf.ConditionBlocks>
+        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+          <ui:IfElseIfBlock BlockType="If" Condition="[in_output_text.Contains(&quot;Singly&quot;)]">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="358,70" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[in_signing_condition]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">Singly</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_output_text.Contains(&quot;Jointly&quot;)]">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="358,70" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[in_signing_condition]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">Jointly</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="Else">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="358,70" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[in_signing_condition]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">N/A</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+        </sc:BindingList>
+      </ui:IfElseIf.ConditionBlocks>
+    </ui:IfElseIf>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="If output.Contains(&quot;Allow&quot;) Then&#xA;&#x9;customer_disclosure = &quot;Allow&quot;&#xA;Else If output.Contains(&quot;Disallow&quot;) Then&#xA;&#x9;customer_disclosure = &quot;Disallow&quot;&#xA;Else&#xA;&#x9;customer_disclosure = &quot;N/A&quot;&#xA;End If" DisplayName="Invoke code Customer Disclosure" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_14">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="output">[in_output_text]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="customer_disclosure">[in_customer_disclosure]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="For Each rowString As String In output&#xA;&#x9;If rowString.Contains(&quot;Product Name&quot;) Then&#xA;&#x9;&#x9;product_name = rowString.Replace(&quot;Product Name&quot;,&quot;&quot;).TrimStart&#xA;&#x9;End If&#xA;Next" DisplayName="Invoke code Product Name" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_12">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="output">[output_text_split]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="product_name">[in_product_name]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="For Each outString As String In output&#xA;&#x9;Try&#xA;&#x9;&#x9;Dim regex As Regex = New Regex(&quot;[A-Z]{1}\d{1}&quot;)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;Dim match As Match = regex.Match(outString)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;If outString.Contains(&quot;Product Code&quot;) Then&#xA;&#x9;&#x9;&#x9;If match.Success Then&#xA;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;product_code = match.Value&#xA;&#x9;&#x9;&#x9;Else &#xA;&#x9;&#x9;&#x9;&#x9;product_code = &quot;N\A&quot;&#xA;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;&#xA;&#x9;Catch ex As Exception&#xA;&#x9;&#xA;&#x9;End Try&#xA;Next" DisplayName="Invoke code Product Code" sap:VirtualizedContainerService.HintSize="451,174" sap2010:WorkflowViewState.IdRef="InvokeCode_9">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="output">[output_text_split]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="product_code">[in_product_code]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:LogMessage DisplayName="Final Output Page 2" sap:VirtualizedContainerService.HintSize="451,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Business Name: &quot; + in_business_name + Environment.NewLine + &#xA;&quot;Registration Number: &quot; + in_reg_num + Environment.NewLine + &#xA;&quot;Date of Incorporation: &quot; + in_date_of_inc + Environment.NewLine + &#xA;&quot;Registered Address: &quot; + registered_address_last + Environment.NewLine + &#xA;&quot;Business Address: &quot; + business_address_last + Environment.NewLine + &#xA;&quot;Mailing Address: &quot; + mailing_address_last + Environment.NewLine + &#xA;&quot;Constitution: &quot; + in_constitution + Environment.NewLine + &#xA;&quot;Current Business Premise(s): &quot; + in_business_premise + Environment.NewLine + &#xA;&quot;Country of Incorporation: &quot; + in_country_inc + Environment.NewLine + &#xA;&quot;Country of Domicile: &quot; + in_country_dom + Environment.NewLine + &#xA;&quot;Country of Primary Exposure: &quot; + in_country_expose_primary + Environment.NewLine + &#xA;&quot;Country of Secondary Exposure: &quot; + in_country_expose_secondary + Environment.NewLine + &#xA;&quot;Business Telephone: &quot; + in_business_telephone + Environment.NewLine + &#xA;&quot;Business Email Address: &quot; + in_business_email_addr + Environment.NewLine + &#xA;&quot;Fax: &quot; + in_fax + Environment.NewLine + &#xA;&quot;Customer Disclosure: &quot; + in_customer_disclosure + Environment.NewLine + &#xA;&quot;Primary Contact Person Name1: &quot; + in_primary_contact_person_name1 + Environment.NewLine + &#xA;&quot;Contact Number1: &quot; + in_contact_num1 + Environment.NewLine + &#xA;&quot;Office No: &quot; + in_office_num + Environment.NewLine + &#xA;&quot;Email1: &quot; + in_email1 + Environment.NewLine + &#xA;&quot;Signing Condition: &quot; + in_signing_condition + Environment.NewLine + &#xA;&quot;Product Name: &quot; + in_product_name + Environment.NewLine + &#xA;&quot;Product Code: &quot; + in_product_code]" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_business_name, in_reg_num,in_date_of_inc, registered_address_last ,business_address_last,mailing_address_last,in_constitution, in_business_premise,in_country_inc, in_country_dom, in_country_expose_primary, in_country_expose_secondary,in_business_telephone, in_business_email_addr, in_fax,in_customer_disclosure,in_primary_contact_person_name1,in_contact_num1,in_office_num,in_email1, in_signing_condition,in_product_name,in_product_code}]" DataTable="[out_data_table]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="451,195" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+    <ui:WriteRange AddHeaders="True" DataTable="[out_data_table]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="451,125" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="L1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2.xlsx" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,414 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,1944</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="62">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="554,1879" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="output_text" />
+      <Variable x:TypeArguments="sd:DataTable" Name="data_table_1" />
+      <Variable x:TypeArguments="sd:DataTable" Name="data_table_2" />
+      <Variable x:TypeArguments="scg:List(sd:DataTable)" Name="list_data_table" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="512,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="512,65" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="[&quot;C:\Users\Admin\Documents\UiPath\PDF Extraction\Split_PDF\MainREF_Form2_Page&quot; +in_TransactionItem + &quot;.pdf&quot;]" sap:VirtualizedContainerService.HintSize="512,69" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[output_text]" />
+    <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[CINT(in_TransactionItem)]" sap:VirtualizedContainerService.HintSize="512,801" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Sequence x:Key="1" sap:VirtualizedContainerService.HintSize="442,475" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,385" sap2010:WorkflowViewState.IdRef="Sequence_44">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Unprocessed Page 1 Output" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[output_text]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="System_1\Page1_Activity.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_output_text">[output_text]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="out_case_id" />
+              <InArgument x:TypeArguments="x:String" x:Key="out_case_stat" />
+              <InArgument x:TypeArguments="x:String" x:Key="out_date_case_start" />
+              <InArgument x:TypeArguments="x:String" x:Key="out_date_case_submit" />
+              <InArgument x:TypeArguments="x:String" x:Key="out_flow" />
+              <InArgument x:TypeArguments="x:String" x:Key="out_drop_off" />
+              <InArgument x:TypeArguments="x:String" x:Key="out_source_1" />
+              <InArgument x:TypeArguments="x:String" x:Key="out_source_2" />
+              <InArgument x:TypeArguments="x:String" x:Key="out_reference_code" />
+              <InArgument x:TypeArguments="x:String" x:Key="out_email_addr" />
+              <InArgument x:TypeArguments="x:String" x:Key="out_contact_num" />
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_data_table">[data_table_1]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </Sequence>
+      <Sequence x:Key="2" sap:VirtualizedContainerService.HintSize="442,475" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,385" sap2010:WorkflowViewState.IdRef="Sequence_45">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Unprocessed Page 2 Output" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[output_text]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="System_1\Page2_Activity.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_reg_num" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_business_name" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_date_of_inc" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_country_inc" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_country_dom" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_output_text">[output_text]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_email1" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_business_email_addr" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_contact_num1" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_business_telephone" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_fax" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_office_num" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_country_expose_primary" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_country_expose_secondary" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_product_code" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_product_name" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_primary_contact_person_name1" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_signing_condition" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_customer_disclosure" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_constitution" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_business_premise" />
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_data_table">[data_table_2]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </Sequence>
+      <Sequence x:Key="3" sap:VirtualizedContainerService.HintSize="442,475" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,385" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Unprocessed Page 3 Output" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[output_text]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="System_1\Page3_Activity.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_output_text">[output_text]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_principal_name1" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_NRIC" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_DateOfBirth" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_main_contact_flag" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_beneficial_owner_declaration_flag" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_email_address1" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_residential_address1" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_nationality" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_country_of_residence" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_race" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_gender" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_occupation_designation_title" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_cif" />
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_data_table" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_decision_maker" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_utility_bill" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_contact_number1" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </Sequence>
+      <Sequence x:Key="4" sap:VirtualizedContainerService.HintSize="442,475" sap2010:WorkflowViewState.IdRef="Sequence_18">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,385" sap2010:WorkflowViewState.IdRef="Sequence_47">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Unprocessed Page 4 Output" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[output_text]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="System_1\Page4_Activity.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_output_text">[output_text]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_sign_nric" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_sign_designation" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_sign_name" />
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="out_data_table" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_individual_nric" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_constitution" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_board_resolution" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_individual2_nric" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_signatory2_name" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_signatory2_nric" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_signatory2_designation" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_signatory2_signature" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_signing_condition" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </Sequence>
+      <Sequence x:Key="5" sap:VirtualizedContainerService.HintSize="442,475" sap2010:WorkflowViewState.IdRef="Sequence_29">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,385" sap2010:WorkflowViewState.IdRef="Sequence_48">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Unprocessed Page 5 Output" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[output_text]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="System_1\Page5_Activity.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_output_text">[output_text]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_fatca_classification" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_crs_classification" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_country_tax_residency" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_active_business" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_date_declaration" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_duitnow_registration" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_preliminary_screening_date" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_preliminary_screening_hit" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_final_screening_date" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_final_screening_hit" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_watchlist_screening_date" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_watchlist_hit" />
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="out_data_table" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_restriction_text" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_constitution" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </Sequence>
+      <Sequence x:Key="6" sap:VirtualizedContainerService.HintSize="442,475" sap2010:WorkflowViewState.IdRef="Sequence_40">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,385" sap2010:WorkflowViewState.IdRef="Sequence_41">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Unprocessed Page 6 Output" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[output_text]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="System_1\Page6_Activity.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_output_text">[output_text]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_risk_scoring_date_time" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_risk_score_num" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_risk_score_decision" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_business_type" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_high_risk_business" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_initial_deposit" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_initial_deposit2" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_business_mainly_operates" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_beneficial_owner_declaration" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_beneficial_owner" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_purpose_account" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_purpose_account2" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_permanent_employees" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_expected_customers" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_expected_suppliers" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_major_originate" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_crimea" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_expected_transactions_num" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_expected_transactions_amount" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_account_num" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_date_account_opened" />
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="out_data_table" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </Sequence>
+      <Sequence x:Key="7" sap:VirtualizedContainerService.HintSize="442,475" sap2010:WorkflowViewState.IdRef="Sequence_42">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,385" sap2010:WorkflowViewState.IdRef="Sequence_49">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Unprocessed Page 7 Output" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[output_text]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="System_1\Page7_Activity.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_output_text">[output_text]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_prerequisites" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_watch_list" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_preliminary_name" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_final_name" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_preliminary_risk" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_final_risk" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_cif_creation" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_kyc_master" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_kyc_occurence" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_customer_contact" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_account_creation" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_address_create" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_address_linking" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_connected_parties" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_fatca" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_crs" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_c2c_tag" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_svs_shell" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_segment" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_terms_conditions" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_user1_name" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_user1_mobile" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_user1_email" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_user1_userID" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_user1_role" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_user2_name" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_user2_mobile" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_user2_email" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_user2_userID" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_user2_role" />
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="out_data_table" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_org_id" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </Sequence>
+    </Switch>
+    <If Condition="[CINT(in_TransactionItem).Equals(7)]" sap:VirtualizedContainerService.HintSize="512,593" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,396" sap2010:WorkflowViewState.IdRef="Sequence_38">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,306" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" Visible="False" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2.xlsx">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,187" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeVBA OutputValue="{x:Null}" CodeFilePath="C:\Users\Admin\Downloads\MainREFolder\VBA Transpose.txt" DisplayName="Invoke VBA" EntryMethodName="Transpose" sap:VirtualizedContainerService.HintSize="358,97" sap2010:WorkflowViewState.IdRef="InvokeVBA_3" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_39">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

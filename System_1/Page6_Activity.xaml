@@ -1,0 +1,189 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Page6_Activity" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_output_text" Type="InArgument(x:String)" />
+    <x:Property Name="in_risk_scoring_date_time" Type="InArgument(x:String)" />
+    <x:Property Name="in_risk_score_num" Type="InArgument(x:String)" />
+    <x:Property Name="in_risk_score_decision" Type="InArgument(x:String)" />
+    <x:Property Name="in_business_type" Type="InArgument(x:String)" />
+    <x:Property Name="in_high_risk_business" Type="InArgument(x:String)" />
+    <x:Property Name="in_initial_deposit" Type="InArgument(x:String)" />
+    <x:Property Name="in_initial_deposit2" Type="InArgument(x:String)" />
+    <x:Property Name="in_business_mainly_operates" Type="InArgument(x:String)" />
+    <x:Property Name="in_beneficial_owner_declaration" Type="InArgument(x:String)" />
+    <x:Property Name="in_beneficial_owner" Type="InArgument(x:String)" />
+    <x:Property Name="in_purpose_account" Type="InArgument(x:String)" />
+    <x:Property Name="in_purpose_account2" Type="InArgument(x:String)" />
+    <x:Property Name="in_permanent_employees" Type="InArgument(x:String)" />
+    <x:Property Name="in_expected_customers" Type="InArgument(x:String)" />
+    <x:Property Name="in_expected_suppliers" Type="InArgument(x:String)" />
+    <x:Property Name="in_major_originate" Type="InArgument(x:String)" />
+    <x:Property Name="in_crimea" Type="InArgument(x:String)" />
+    <x:Property Name="in_expected_transactions_num" Type="InArgument(x:String)" />
+    <x:Property Name="in_expected_transactions_amount" Type="InArgument(x:String)" />
+    <x:Property Name="in_account_num" Type="InArgument(x:String)" />
+    <x:Property Name="in_date_account_opened" Type="InArgument(x:String)" />
+    <x:Property Name="out_data_table" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,1089</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Page6_Activity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Page6_Activity" sap:VirtualizedContainerService.HintSize="400,1024" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="output_text_split" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[out_data_table]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="358,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Risk_x0020_Scoring_x0020_Date_x0020_Time_x0020_Stamp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Risk_x0020_Score_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Risk_x0020_Score_x0020_Decision&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Tell_x0020_us_x0020_more_x0020_about_x0020_your_x0020_business&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Other_x0020_High_x0020_Risk_x0020_Business_x0020_Declaration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Initial_x0020_Deposit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Initial_x0020_Deposit_x0020__x0028_Others_x0029__x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Business_x0020_Mainly_x0020_Operates_x0020_In_x0020__x0028_Country_x0020_of_x0020_Domicile_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Beneficial_x0020_Owner_x0020_Declaration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Other_x0020_Beneficial_x0020_Owner&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Purpose_x0020_of_x0020_Account&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Purpose_x0020_of_x0020_Account_x0020__x0028_Other_x0029__x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Permanent_x0020_Employees&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;_x0035__x0020_Names_x0020_and_x0020_Locations_x0020_of_x0020_Current_x0020_or_x0020_Expected_x0020_Customers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;_x0035__x0020_Names_x0020_and_x0020_Locations_x0020_of_x0020_Current_x0020_or_x0020_Expected_x0020_Suppliers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Majority_x0020_of_x0020_the_x0020_Sales_x0020_Originate_x0020_From&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Ukraine_x002F_Russia_x0020_-_x0020_Crimea&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Expected_x0020_Number_x0020_of_x0020_Transactions_x0020_per_x0020_Month&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Expected_x0020_Transaction_x0020_Amount_x0020_per_x0020_Month&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Account_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020_Account_x0020_Opened&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <Assign sap:VirtualizedContainerService.HintSize="358,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[output_text_split]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[in_output_text.Split(New String() {Environment.NewLine},StringSplitOptions.None)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_customer As New List(Of String)&#xD;&#xA;Dim list_supplier As New List(Of String)&#xD;&#xA;Dim list_country As New List(Of String)&#xD;&#xA;Dim list_yes_no As New List(Of String)&#xD;&#xA;Dim list_transaction_num As New List(Of String)&#xD;&#xA;&#xD;&#xA;For Each strRow As String In output &#xD;&#xA;&#x9;Dim regexExpectedCustomer As Regex = New System.Text.RegularExpressions.Regex(&quot;Customer\s[A-Z]\s\([A-Z]{3,}\)&quot;)&#xD;&#xA;&#x9;Dim matchExpectedCustomer As Match = regexExpectedCustomer.Match(strRow)&#xD;&#xA;&#x9;Dim regexExpectedSupplier As Regex = New System.Text.RegularExpressions.Regex(&quot;Supplier\s[A-Z]\s\([A-Z]{3,}\)&quot;)&#xD;&#xA;&#x9;Dim matchExpectedSupplier As Match = regexExpectedSupplier.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchExpectedCustomer.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchExpectedCustomer.Value)&#xD;&#xA;&#x9;&#x9;list_customer.Add(matchExpectedCustomer.Value)&#xD;&#xA;&#x9;Else If matchExpectedSupplier.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchExpectedSupplier.Value)&#xD;&#xA;&#x9;&#x9;list_supplier.Add(matchExpectedSupplier.Value)&#xD;&#xA;&#x9;End If&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;customer = String.Join(&quot; &quot;,list_customer)&#xD;&#xA;supplier = String.Join(&quot; &quot;,list_supplier)&#xD;&#xA;&#xD;&#xA;For Each strRow As String In output &#xD;&#xA;&#x9;Dim regexCountry As Regex = New System.Text.RegularExpressions.Regex(&quot;MALAYSIA|SINGAPORE&quot;)&#xD;&#xA;&#x9;Dim matchCountry As Match = regexCountry.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchCountry.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchCountry.Value)&#xD;&#xA;&#x9;&#x9;list_country.Add(matchCountry.Value)&#xD;&#xA;&#x9;End If&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;mainly_operates = list_country(0)&#xD;&#xA;majority_sales_originate = list_country(list_country.count-1).ToString  &#xD;&#xA;&#xD;&#xA;For Each strRow As String In output &#xD;&#xA;&#x9;Dim regexOwnerDeclaration As Regex = New System.Text.RegularExpressions.Regex(&quot;\d{5,}&quot;)&#xD;&#xA;&#x9;Dim matchOwnerDeclaration As Match = regexOwnerDeclaration.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchOwnerDeclaration.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchOwnerDeclaration.Value)&#xD;&#xA;&#x9;&#x9;beneficial_owner_declaration = matchOwnerDeclaration.Value&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;&#xD;&#xA;For Each strRow As String In output &#xD;&#xA;&#x9;Dim regexYesNo As Regex = New System.Text.RegularExpressions.Regex(&quot;No|Yes&quot;)&#xD;&#xA;&#x9;Dim matchYesNo As Match = regexYesNo.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchYesNo.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchYesNo.Value)&#xD;&#xA;&#x9;&#x9;list_yes_no.Add(matchYesNo.Value)&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;&#xD;&#xA;high_risk_business = list_yes_no(0)&#xD;&#xA;beneficial_owner = list_yes_no(1)&#xD;&#xA;crimea = list_yes_no(2)&#xD;&#xA;&#xD;&#xA;For Each strRow As String In output &#xD;&#xA;&#x9;If strRow.Contains(&quot;Account Number&quot;) Then&#xD;&#xA;&#x9;&#x9;account_num = LTrim(strRow.Replace(&quot;Account Number&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If strRow.Contains(&quot;Date Account Opened&quot;) Then&#xD;&#xA;&#x9;&#x9;date_account_open = LTrim(strRow.Replace(&quot;Date Account Opened&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;For Each strRow As String In output&#xD;&#xA;&#x9;Dim regexTransactionAmount As Regex = New System.Text.RegularExpressions.Regex(&quot;(?=RM).*&quot;)&#xD;&#xA;&#x9;Dim matchTransactionAmount As Match = regexTransactionAmount.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchTransactionAmount.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT transaction amount: [{0}]&quot;, matchTransactionAmount.Value)&#xD;&#xA;&#x9;&#x9;transaction_amount = matchTransactionAmount.Value&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;&#xD;&#xA;Dim regexRemoveText As Regex = New System.Text.RegularExpressions.Regex(&quot;(?=Risk Scoring)(.|\n)*(?&lt;=per Month)&quot;,RegexOptions.Multiline)&#xD;&#xA;Dim matchRemoveText As Match = regexRemoveText.Match(output2)&#xD;&#xA;&#xD;&#xA;If matchRemoveText.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchRemoveText.Value)&#xD;&#xA;&#x9;&#x9;&#x9;output2 = output2.Replace(matchRemoveText.value,&quot;&quot;)&#xD;&#xA;&#x9;End If&#xD;&#xA;&#xD;&#xA;'removing all variables, leaving only the value&#xD;&#xA;Dim array_output As String() = output2.Split(New String() {Environment.NewLine},StringSplitOptions.None)&#xD;&#xA;&#x9; &#xD;&#xA;risk_scoring_date_time = array_output(0).ToString &#xD;&#xA;risk_score_number = array_output(1).ToString&#xD;&#xA;risk_score_decision = array_output(2).ToString &#xD;&#xA;&#xD;&#xA;For Each strArray As String In array_output&#xD;&#xA;&#x9;Console.WriteLine(strArray)&#xD;&#xA;&#x9;Next&#xD;&#xA;&#xD;&#xA;For Each strArray As String In array_output &#xD;&#xA;&#x9;If strArray.Contains(&quot;trading&quot;) Then &#xD;&#xA;&#x9;&#x9;business_type = strArray.ToString&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If strArray.Contains(&quot;Business Revenue&quot;) Then&#xD;&#xA;&#x9;&#x9;initial_deposit = strArray.ToString &#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If strArray.Contains(&quot;Business Operations&quot;) Then&#xD;&#xA;&#x9;&#x9;purpose_account = strArray.ToString&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;For Each strRow As String In array_output&#xD;&#xA;&#x9;Dim regexTransactionNum As Regex = New System.Text.RegularExpressions.Regex(&quot;(?=\d).*&quot;)&#xD;&#xA;&#x9;Dim matchTransactionNum As Match = regexTransactionNum.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchTransactionNum.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of transaction num: [{0}]&quot;, matchTransactionNum.Value)&#xD;&#xA;&#x9;&#x9;&#x9;list_transaction_num.Add(matchTransactionNum.Value)&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;&#xD;&#xA;permanent_employee = list_transaction_num(1).ToString&#xD;&#xA;transaction_num = list_transaction_num(2).ToString&#xD;&#xA;&#x9;" DisplayName="Invoke code Page 6" sap:VirtualizedContainerService.HintSize="358,174" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="output">
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="output_text_split" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="supplier">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_expected_suppliers" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="customer">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_expected_customers" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="mainly_operates">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_business_mainly_operates" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="majority_sales_originate">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_major_originate" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="beneficial_owner_declaration">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_beneficial_owner_declaration" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="crimea">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_crimea" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="high_risk_business">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_high_risk_business" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="beneficial_owner">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_beneficial_owner" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="account_num">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_account_num" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="date_account_open">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_date_account_opened" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="transaction_num">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_expected_transactions_num" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="transaction_amount">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_expected_transactions_amount" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="output2">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_output_text" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="risk_scoring_date_time">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_risk_scoring_date_time" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="risk_score_number">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_risk_score_num" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="risk_score_decision">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_risk_score_decision" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="business_type">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_business_type" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="purpose_account">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_purpose_account" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="initial_deposit">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_initial_deposit" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="permanent_employee">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_permanent_employees" />
+        </OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:LogMessage DisplayName="Final Output Page 6" sap:VirtualizedContainerService.HintSize="358,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Risk Scoring Date Time Stamp &quot; + in_risk_scoring_date_time + Environment.NewLine + &#xA;&quot;Risk Score Number: &quot; + in_risk_score_num + Environment.NewLine + &#xA;&quot;Risk Score Decision: &quot; + in_risk_score_decision + Environment.NewLine + &#xA;&quot;Tell us more about your business: &quot; + in_business_type + Environment.NewLine + &#xA;&quot;Other High Risk Business Declaration: &quot; + in_high_risk_business + Environment.NewLine + &#xA;&quot;Initial Deposit: &quot; + in_initial_deposit + Environment.NewLine + &#xA;&quot;Initial Deposit (Others) Text: &quot; + in_initial_deposit2 + Environment.NewLine + &#xA;&quot;Business Mainly Operates In (Country of Domicile): &quot; + in_business_mainly_operates + Environment.NewLine + &#xA;&quot;Beneficial Owner Declaration: &quot; + in_beneficial_owner_declaration + Environment.NewLine + &#xA;&quot;Other Beneficial Owner: &quot; + in_beneficial_owner + Environment.NewLine + &#xA;&quot;Purpose of Account: &quot; + in_purpose_account + Environment.NewLine + &#xA;&quot;Purpose of Account(Other Text): &quot; + in_purpose_account2 + Environment.NewLine + &#xA;&quot;Permanent Employees: &quot; + in_permanent_employees + Environment.NewLine + &#xA;&quot;5 Names and Locations of Current or Expected Customers: &quot; + in_expected_customers + Environment.NewLine + &#xA;&quot;5 Names and Locations of Current or Expected Suppliers: &quot; + in_expected_suppliers + Environment.NewLine + &#xA;&quot;Majority of the Sales Originate From: &quot; + in_major_originate + Environment.NewLine + &#xA;&quot;Ukraine/Russia - Crimea: &quot; + in_crimea + Environment.NewLine + &#xA;&quot;Expected Number of Transactions per Month: &quot; + in_expected_transactions_num + Environment.NewLine + &#xA;&quot;Expected Transaction Amount per Month: &quot; + in_expected_transactions_amount + Environment.NewLine + &#xA;&quot;Account Number: &quot; + in_account_num + Environment.NewLine + &#xA;&quot;Date Account Opened: &quot; + in_date_account_opened]" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_risk_scoring_date_time,in_risk_score_num,in_risk_score_decision,in_business_type,in_high_risk_business,in_initial_deposit,in_initial_deposit2,in_business_mainly_operates,in_beneficial_owner_declaration,in_beneficial_owner,in_purpose_account,in_purpose_account2,in_permanent_employees,in_expected_customers,in_expected_suppliers,in_major_originate,in_crimea,in_expected_transactions_num,in_expected_transactions_amount,in_account_num,in_date_account_opened}]" DataTable="[out_data_table]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="358,195" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <ui:WriteRange AddHeaders="True" DataTable="[out_data_table]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="358,125" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="BZ1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2.xlsx" />
+  </Sequence>
+</Activity>

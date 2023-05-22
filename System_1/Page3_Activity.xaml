@@ -1,0 +1,173 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Page3_Activity" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_output_text" Type="InArgument(x:String)" />
+    <x:Property Name="in_principal_name1" Type="InArgument(x:String)" />
+    <x:Property Name="in_NRIC" Type="InArgument(x:String)" />
+    <x:Property Name="in_DateOfBirth" Type="InArgument(x:String)" />
+    <x:Property Name="in_main_contact_flag" Type="InArgument(x:String)" />
+    <x:Property Name="in_beneficial_owner_declaration_flag" Type="InArgument(x:String)" />
+    <x:Property Name="in_email_address1" Type="InArgument(x:String)" />
+    <x:Property Name="in_residential_address1" Type="InArgument(x:String)" />
+    <x:Property Name="in_nationality" Type="InArgument(x:String)" />
+    <x:Property Name="in_country_of_residence" Type="InArgument(x:String)" />
+    <x:Property Name="in_race" Type="InArgument(x:String)" />
+    <x:Property Name="in_gender" Type="InArgument(x:String)" />
+    <x:Property Name="in_occupation_designation_title" Type="InArgument(x:String)" />
+    <x:Property Name="in_cif" Type="InArgument(x:String)" />
+    <x:Property Name="out_data_table" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_decision_maker" Type="InArgument(x:String)" />
+    <x:Property Name="in_utility_bill" Type="InArgument(x:String)" />
+    <x:Property Name="in_contact_number1" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,1089</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Page3_Activity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Page3_Activity" sap:VirtualizedContainerService.HintSize="400,1024" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="output_text_split" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[out_data_table]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="358,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;CIF&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;NRIC_x0020_Number1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Principal_x0020_Name1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date_x0020_of_x0020_Birth&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Nationality&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Residence&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Residential_x0020_Address1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Race&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Gender&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Contact_x0020_Number1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Email_x0020_Address1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Main_x0020_Contact_x0020_Flag&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Beneficial_x0020_owner_x0020_declaration_x0020_flag&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Occupation_x002F_Designation_x002F_Title&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Other_x002F_Additional_x0020_ultimate_x0020_owner_x0020_and_x0020_decision_x0020_maker&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Image_x0020_of_x0020_utility_x0020_bill&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <Assign DisplayName="Assign in_output_text into array of output_text_split" sap:VirtualizedContainerService.HintSize="358,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[output_text_split]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[in_output_text.Split(New String() {Environment.NewLine},StringSplitOptions.None)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="For Each strRow As String In output &#xD;&#xA;&#xD;&#xA;&#x9;'CIF&#xD;&#xA;&#x9;If strRow.Contains(&quot;CIF&quot;) Then&#xD;&#xA;&#x9;&#x9;cif = LTrim(strRow.Replace(&quot;CIF&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'NRIC Number1&#xD;&#xA;&#x9;If strRow.Contains(&quot;NRIC Number1&quot;) Then&#xD;&#xA;&#x9;&#x9;Dim regexNRIC As Regex = New Regex(&quot;\d{12,12}&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchNRIC As Match = regexNRIC.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&#x9;If matchNRIC.Success Then&#xD;&#xA;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchNRIC.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;nric = matchNRIC.Value&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Principal Name1&#xD;&#xA;&#x9;If strRow.Contains(&quot;Principal Name1&quot;) Then&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;Dim regexPrincipalName1 As Regex = New Regex(&quot;[A-Z{1,1}](\d{1,1})\s[a-zA-Z0-9\s]+[a-zA-Z0-9\s]+&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchPrincipalName1 As Match = regexPrincipalName1.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;If matchPrincipalName1.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;     Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchPrincipalName1.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;principal_name1 = matchPrincipalName1.Value&#xD;&#xA;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;'Date of Birth&#xD;&#xA;&#x9;If strRow.Contains(&quot;Date of Birth&quot;) Then&#xD;&#xA;&#x9;&#x9;Dim regexDOB As Regex = New Regex(&quot;\d{2}(\s)(?:Jan|Feb|Mar|Apr|May|June|Jul|Aug|Sep|Oct|Nov|Dec)(\s)\d{4}$&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchDOB As Match = regexDOB.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;If matchDOB.Success Then&#xD;&#xA;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchDOB.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;dob = matchDOB.Value&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Beneficial owner declaration and main contact flag&#xD;&#xA;&#x9;If strRow.Contains(&quot;Main&quot;) And strRow.Contains(&quot;Contact&quot;) Then&#xD;&#xA;&#x9;&#x9;If strRow.Contains(&quot;Yes&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;main_contact_flag = &quot;Yes&quot;&#xD;&#xA;&#x9;&#x9;Else If strRow.Contains(&quot;No&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;main_contact_flag = &quot;No&quot;&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;If strRow.Contains(&quot;Beneficial&quot;) And strRow.Contains(&quot;owner&quot;) And strRow.Contains(&quot;declaration&quot;) Then&#xD;&#xA;&#x9;&#x9;If strRow.Contains(&quot;Yes&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;beneficial_owner_declaration_flag = &quot;Yes&quot;&#xD;&#xA;&#x9;&#x9;Else If strRow.Contains(&quot;No&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;beneficial_owner_declaration_flag = &quot;No&quot;&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Email Address1&#xD;&#xA;&#x9;If strRow.Contains(&quot;Email Address1&quot;) Then&#xD;&#xA;&#x9;&#x9;Dim regexEmailAddr As Regex = New Regex(&quot;(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|&quot; + &quot;(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*&quot;+&quot;)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchEmailAddr As Match = regexEmailAddr.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;If matchEmailAddr.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;    Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchEmailAddr.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;email_address1 = matchEmailAddr.Value&#xD;&#xA;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Residential Address1&#xD;&#xA;&#x9;If strRow.Contains(&quot;Residential Address1&quot;)&#xD;&#xA;&#x9;&#x9;Try&#xD;&#xA;&#x9;&#x9;&#x9;Dim regexResidentialAddr As Regex = New Regex(&quot;(\d{5,5}\s)[a-zA-Z0-9\s]+(\.)?[a-zA-Z0-9\s]+&quot;)&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;Dim matchResidentialAddr As Match = regexResidentialAddr.Match(output(Array.IndexOf(output, strRow)+1))&#xD;&#xA;&#x9;&#x9;&#x9;If matchResidentialAddr.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;     Console.WriteLine(&quot;RESULT of Address: [{0}]&quot;, matchResidentialAddr.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; residential_address = matchResidentialAddr.Value&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;residential_address = &quot;N/A&quot;&#xD;&#xA;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;Catch Ex As Exception&#xD;&#xA;&#x9;&#x9;End Try&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Nationality&#xD;&#xA;&#x9;If strRow.Contains(&quot;Nationality&quot;) Then&#xD;&#xA;       &#x9;&#x9;nationality = strRow.Replace(&quot;Nationality&quot;,&quot;&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;nationality = LTrim(nationality)&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;'Country of Residence&#xD;&#xA;&#x9;If strRow.Contains(&quot;Country of Residence&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;country_of_residence = strRow.Replace(&quot;Country of Residence&quot;,&quot;&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;country_of_residence = LTrim(country_of_residence)&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Race&#xD;&#xA;&#x9;If strRow.Contains(&quot;Race&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;race = strRow.Replace(&quot;Race&quot;,&quot;&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;race = LTrim(race)&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;'Gender&#xD;&#xA;&#x9;If strRow.Contains(&quot;Gender&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;If strRow.Contains(&quot;Male&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;gender = &quot;Male&quot;&#xD;&#xA;&#x9;&#x9;&#x9;Else If strRow.Contains(&quot;Female&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;gender = &quot;Female&quot;&#xD;&#xA;&#x9;&#x9;&#x9;Else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;gender = &quot;N/A&quot;&#xD;&#xA;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;'Contact Number1&#xD;&#xA;&#x9;If strRow.Contains(&quot;Contact Number1&quot;) Then&#xD;&#xA;&#x9;&#x9;Dim regexContactN1 As Regex = New Regex(&quot;(\+?6?01)?(\(?[0-9]{3}\)?|[0-9]{8})( |-)?([0-9]{8}( |-)?[0-9]{8}|[a-zA-Z0-9]{8})&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchContactN1 As Match = regexContactN1.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;If matchContactN1.Success Then&#xD;&#xA;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchContactN1.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;contact_num = matchContactN1.Value&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;'Occupation/Designation/Title&#xD;&#xA;&#x9;If strRow.Contains(&quot;Occupation&quot;)&#xD;&#xA;&#x9;&#x9;occupation_designation_title = LTrim(strRow.Split(&quot;/&quot;c)(2))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Owner Decision Maker&#xD;&#xA;&#x9;If strRow.Contains(&quot;Other/Additional ultimate&quot;) And strRow.Contains(&quot;Yes&quot;) Then&#xD;&#xA;&#x9;&#x9;decision_maker = &quot;Yes&quot;&#xD;&#xA;&#x9;Else If strRow.Contains(&quot;Other/Additional ultimate&quot;) And strRow.Contains(&quot;No&quot;) Then&#xD;&#xA;&#x9;&#x9;decision_maker = &quot;No&quot;&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Image of Utility Bill&#xD;&#xA;&#x9;If strRow.Contains(&quot;Image of utility bill&quot;) Then&#xD;&#xA;&#x9;&#x9;Try&#xD;&#xA;&#x9;&#x9;img_utility_bill = output(Array.IndexOf(output, strRow)+1)&#xD;&#xA;&#x9;Catch Ex As Exception&#xD;&#xA;&#x9;End Try&#xD;&#xA;&#x9;End If&#xD;&#xA;Next" DisplayName="Invoke code Page 3" sap:VirtualizedContainerService.HintSize="358,174" sap2010:WorkflowViewState.IdRef="InvokeCode_13">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="output">
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="output_text_split" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="cif">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_cif" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="principal_name1">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_principal_name1" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="nric">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_NRIC" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="dob">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_DateOfBirth" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="main_contact_flag">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_main_contact_flag" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="beneficial_owner_declaration_flag">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_beneficial_owner_declaration_flag" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="email_address1">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_email_address1" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="residential_address">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_residential_address1" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="nationality">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_nationality" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="country_of_residence">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_country_of_residence" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="gender">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_gender" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="race">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_race" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="occupation_designation_title">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_occupation_designation_title" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="decision_maker">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_decision_maker" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="img_utility_bill">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_utility_bill" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="contact_num">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_contact_number1" />
+        </OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:LogMessage DisplayName="Final Output Page 3" sap:VirtualizedContainerService.HintSize="358,101" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;CIF: &quot; + in_cif + Environment.NewLine + &#xD;&#xA;&quot;NRIC Number1: &quot; + in_NRIC + Environment.NewLine + &#xD;&#xA;&quot;Principal Name1: &quot; + in_principal_name1 + Environment.NewLine + &#xD;&#xA;&quot;Date of Birth: &quot; + in_DateOfBirth + Environment.NewLine + &#xD;&#xA;&quot;Nationality: &quot; + in_nationality + Environment.NewLine + &#xD;&#xA;&quot;Country of Residence: &quot; + in_country_of_residence + Environment.NewLine + &#xD;&#xA;&quot;Residential Address1: &quot; + in_residential_address1 + Environment.NewLine + &#xD;&#xA;&quot;Race: &quot; + in_race + Environment.NewLine + &#xD;&#xA;&quot;Gender: &quot; + in_gender + Environment.NewLine + &#xD;&#xA;&quot;Email Address1: &quot; + in_email_address1 + Environment.NewLine + &#xD;&#xA;&quot;Main Contact Flag &quot; + in_main_contact_flag + Environment.NewLine + &#xD;&#xA;&quot;Beneficial owner declaration flag: &quot; + in_beneficial_owner_declaration_flag + Environment.NewLine + &#xD;&#xA;&quot;Occupation/Designation/Title: &quot; + in_occupation_designation_title + Environment.NewLine + &#xD;&#xA;&quot;Other/Additional ultimate owner and decision maker: &quot; + in_decision_maker + Environment.NewLine + &#xD;&#xA;&quot;Image of utility bill: &quot; + in_utility_bill]" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_cif,in_NRIC,in_principal_name1,in_DateOfBirth,in_nationality,in_country_of_residence,in_residential_address1,in_race,in_gender,in_contact_number1,in_email_address1,in_main_contact_flag,in_beneficial_owner_declaration_flag,in_occupation_designation_title,in_decision_maker,in_utility_bill}]" DataTable="[out_data_table]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="358,195" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <ui:WriteRange AddHeaders="True" DataTable="[out_data_table]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="358,125" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="AI1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2.xlsx" />
+  </Sequence>
+</Activity>

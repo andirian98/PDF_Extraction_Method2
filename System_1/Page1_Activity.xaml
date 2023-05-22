@@ -1,0 +1,167 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Page1_Activity" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_output_text" Type="InArgument(x:String)" />
+    <x:Property Name="out_case_id" Type="InArgument(x:String)" />
+    <x:Property Name="out_case_stat" Type="InArgument(x:String)" />
+    <x:Property Name="out_date_case_start" Type="InArgument(x:String)" />
+    <x:Property Name="out_date_case_submit" Type="InArgument(x:String)" />
+    <x:Property Name="out_flow" Type="InArgument(x:String)" />
+    <x:Property Name="out_drop_off" Type="InArgument(x:String)" />
+    <x:Property Name="out_source_1" Type="InArgument(x:String)" />
+    <x:Property Name="out_source_2" Type="InArgument(x:String)" />
+    <x:Property Name="out_reference_code" Type="InArgument(x:String)" />
+    <x:Property Name="out_email_addr" Type="InArgument(x:String)" />
+    <x:Property Name="out_contact_num" Type="InArgument(x:String)" />
+    <x:Property Name="out_data_table" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,1481</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Page1_Activity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Page1_Activity" sap:VirtualizedContainerService.HintSize="478,1416" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="second_date" />
+      <Variable x:TypeArguments="x:String" Name="flow_text" />
+      <Variable x:TypeArguments="x:String" Name="source_1_text" />
+      <Variable x:TypeArguments="x:String" Name="drop_off_text" />
+      <Variable x:TypeArguments="sd:DataTable" Name="data_table" />
+      <Variable x:TypeArguments="x:String" Name="ref_text" />
+      <Variable x:TypeArguments="s:String[]" Name="output_text_split" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[out_data_table]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="436,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Case_x0020_Id&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Case_x0020_Status&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020__x002F__x0020_Time_x0020_Stamp_x0020__x0028_Case_x0020_Started_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020__x002F__x0020_Time_x0020_Stamp_x0020__x0028_Case_x0020_Submitted_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Flow&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Drop-Off_x0020_Reason&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Source_x0020_1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Source_x0020_2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Reference_x0020_Code_x0020__x0028_For_x0020_Bank_x0020_use_x0020_only_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Email_x0020_Address_x0020__x0028_For_x0020_Bank_x0020_use_x0020_only_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Contact_x0020_Number_x0020__x0028_For_x0020_Bank_x0020_use_x0020_only_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <Assign sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[output_text_split]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[in_output_text.Split(New String() {Environment.NewLine},StringSplitOptions.None)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="For Each strRow As String In output &#xA;&#xA;   'Case ID&#xA;&#x9;If strRow.Contains(&quot;Case Id&quot;) Then&#xA;&#x9;&#x9;Dim regex As Regex = New Regex(&quot;\d{10,10}&quot;)&#xA;&#x9;&#x9;Dim match As Match = regex.Match(strRow)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;If match.Success Then&#xA;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;&#x9;case_id = match.Value&#xA;&#x9;&#x9;&#x9;Else&#xA;&#x9;&#x9;&#x9;&#x9;case_id = &quot;N/A&quot;&#xA;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;&#xA;&#x9;'Case Status&#xA;&#x9;If strRow.Contains(&quot;Case Status&quot;) Then&#xA;&#x9;&#x9;case_stat = LTrim(strRow.Replace(&quot;Case Status&quot;,&quot;&quot;))&#xA;&#x9;&#x9;End If&#xA;&#x9;&#xA;&#x9;'Case Started&#xA;&#x9;If strRow.Contains(&quot;Time Stamp&quot;) Then&#xA;&#x9;&#x9;Try &#xA;&#x9;&#x9;&#x9;If output(Array.IndexOf(output, strRow)+1).Contains(&quot;Submitted&quot;) Then&#xA;&#x9;&#x9;&#x9;&#x9;Dim regexDateStart As Regex = New Regex(&quot;(?:(?:(?:(?:0?[13578]|1[02])(?&lt;first&gt;\/|-|\.)31)\k&lt;first&gt;|(?:(?:0?[13-9]|1[0-2])(?&lt;second&gt;\/|-|\.)(?:29|30)\k&lt;second&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:0?2(?&lt;third&gt;\/|-|\.)29\k&lt;third&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:(?:0?[1-9])|(?:1[0-2]))(?&lt;fourth&gt;\/|-|\.)(?:0?[1-9]|1\d|2[0-8])\k&lt;fourth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:(?:(?:Jan|Mar|May|Jul|Aug|Oct|Dec)(?&lt;fifth&gt;\/|-|\s)31)\k&lt;fifth&gt;|(?:(?:Jan|Mar|Apr|May|June|Jul|Aug|Sep|Oct|Nov|Dec)(?&lt;sixth&gt;\/|-|\s)(?:29|30)\k&lt;sixth&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:February(?&lt;seventh&gt;\/|-|\s)29\k&lt;seventh&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:Jan|Feb|Mar|Apr|May|June|Jul|Aug|Sep|Oct|Nov|Dec)(?&lt;eighth&gt;\/|-|\s)(?:0?[1-9]|1\d|2[0-8])\k&lt;eighth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2}))+&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;Dim regexTimeStart As Regex = New Regex(&quot;(1[0-2]|0?[1-9]):([0-5]?[0-9]):([0-5]?[0-9])\s([AaPp][Mm])&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;Dim matchDateStart As Match = regexDateStart.Match(strRow)&#xA;&#x9;&#x9;&#x9;&#x9;Dim matchTimeStart As Match = regexTimeStart.Match(strRow)&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;If matchDateStart.Success And matchTimeStart.Success Then&#xA;&#x9;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchDateStart.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchTimeStart.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case_start = matchDateStart.Value + &quot; &quot; + matchTimeStart.Value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;Catch ex As Exception&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;End Try&#xA;&#x9;&#x9;End If&#xA;&#x9;'Case Submitted&#xA;&#x9;If strRow.Contains(&quot;Time Stamp&quot;) Then&#xA;&#x9;&#x9;Try&#xA;&#x9;&#x9;&#x9;If output(Array.IndexOf(output, strRow)+1).Contains(&quot;Submitted&quot;) Then&#xA;&#x9;&#x9;&#x9;&#x9;Dim regexDateSubmit As Regex = New Regex(&quot;(?:(?:(?:(?:0?[13578]|1[02])(?&lt;first&gt;\/|-|\.)31)\k&lt;first&gt;|(?:(?:0?[13-9]|1[0-2])(?&lt;second&gt;\/|-|\.)(?:29|30)\k&lt;second&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:0?2(?&lt;third&gt;\/|-|\.)29\k&lt;third&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:(?:0?[1-9])|(?:1[0-2]))(?&lt;fourth&gt;\/|-|\.)(?:0?[1-9]|1\d|2[0-8])\k&lt;fourth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:(?:(?:Jan|Mar|May|Jul|Aug|Oct|Dec)(?&lt;fifth&gt;\/|-|\s)31)\k&lt;fifth&gt;|(?:(?:Jan|Mar|Apr|May|June|Jul|Aug|Sep|Oct|Nov|Dec)(?&lt;sixth&gt;\/|-|\s)(?:29|30)\k&lt;sixth&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:February(?&lt;seventh&gt;\/|-|\s)29\k&lt;seventh&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:Jan|Feb|Mar|Apr|May|June|Jul|Aug|Sep|Oct|Nov|Dec)(?&lt;eighth&gt;\/|-|\s)(?:0?[1-9]|1\d|2[0-8])\k&lt;eighth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2}))+&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;Dim regexTimeSubmit As Regex = New Regex(&quot;(1[0-2]|0?[1-9]):([0-5]?[0-9]):([0-5]?[0-9])\s([AaPp][Mm])&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;Dim matchDateSubmit As Match = regexDateSubmit.Match(strRow)&#xA;&#x9;&#x9;&#x9;&#x9;Dim matchTimeSubmit As Match = regexTimeSubmit.Match(strRow)&#xA;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;If matchDateSubmit.Success And matchTimeSubmit.Success Then&#xA;&#x9;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchDateSubmit.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchTimeSubmit.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;case_submit = matchDateSubmit.Value + &quot; &quot; + matchTimeSubmit.Value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;&#x9;Catch Ex As Exception&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;End Try&#xA;&#x9;&#x9;End If&#xA;&#x9;&#x9;&#xA;&#x9;'Flow&#xA;&#x9;If strRow.Contains(&quot;Flow&quot;) Then &#xA;&#x9;&#x9;Dim regexFlow As Regex = New Regex(&quot;[A-Z]{3}&quot;)&#xA;&#x9;&#x9;Dim matchFlow As Match = regexFlow.Match(strRow)&#xA;&#x9;&#xA;&#x9;&#x9;If matchFlow.Success Then&#xA;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchFlow.Value)&#xA;&#x9;&#x9;&#x9;&#x9;flow = matchFlow.Value&#xA;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;&#xA;&#x9;'Drop-Off Reason&#xA;&#x9;If strRow.Contains(&quot;Drop-Off Reason&quot;) Then&#xA;&#x9;&#x9;&#x9;drop_off_reason = LTrim(strRow.Replace(&quot;Drop-Off Reason&quot;,&quot;&quot;))&#xA;&#x9;&#x9;End If&#xA;&#x9;&#x9;&#xA;&#x9;'Source 1&#xA;&#x9;If strRow.Contains(&quot;Source 1&quot;) Then&#xA;&#x9;&#x9;&#x9;Dim regexSource1 As Regex = New Regex(&quot;[A-Z]{3}&quot;)&#xA;&#x9;&#x9;&#x9;Dim matchSource1 As Match = regexSource1.Match(strRow)&#xA;&#x9;&#xA;&#x9;&#x9;&#x9;If matchSource1.Success Then&#xA;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchSource1.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;source_1 = matchSource1.Value&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;&#xA;&#x9;'Source 2&#xA;&#x9;If strRow.Contains(&quot;Source 2&quot;) Then&#xA;&#x9;&#x9;&#x9;Dim regexSource2 As Regex = New Regex(&quot;[A-Z]\d+&quot;)&#xA;&#x9;&#x9;&#x9;Dim matchSource2 As Match = regexSource2.Match(strRow)&#xA;&#x9;&#xA;&#x9;&#x9;&#x9;If matchSource2.Success Then&#xA;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchSource2.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;source_2 = matchSource2.Value&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;&#xA;&#x9;'Reference Code (For Bank Use)&#xA;&#x9;If strRow.Contains(&quot;Reference Code&quot;) Then&#xA;&#x9;&#x9;Dim regexRef As Regex = New Regex(&quot;[A-Z]\d+&quot;)&#xA;&#x9;&#x9;Dim matchRef As Match = regexRef.Match(strRow)&#xA;&#x9;&#xA;&#x9;&#x9;&#x9;If matchRef.Success Then&#xA;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchRef.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ref_code = matchRef.Value&#xA;&#x9;&#x9;&#x9;Else&#xA;&#x9;&#x9;&#x9;&#x9;ref_code = Nothing&#xA;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;&#x9;&#xA;&#x9;'Email Address (For Bank Use)&#xA;&#x9;If strRow.Contains(&quot;Email Address&quot;) Then&#xA;&#x9;&#x9;Dim regexEmail As Regex = New Regex(&quot;^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$&quot;)&#xA;&#x9;&#x9;Dim matchEmail As Match = regexEmail.Match(strRow)&#xA;&#x9;&#xA;&#x9;&#x9;&#x9;If matchEmail.Success Then&#xA;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchEmail.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;email_address = matchEmail.Value&#xA;&#x9;&#x9;&#x9;&#x9;Else &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;email_address = Nothing&#xA;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;&#x9;&#xA;&#x9;'Contact Number (For Bank Use)&#xA;&#x9;If strRow.Contains(&quot;Contact Number&quot;) Then&#xA;&#x9;&#x9;&#x9;Dim regexContact As Regex = New Regex(&quot;^(\+?6?01)[0-46-9]-*[0-9]{7,8}$&quot;)&#xA;&#x9;&#x9;&#x9;Dim matchContact As Match = regexContact.Match(strRow)&#xA;&#x9;&#xA;&#x9;&#x9;&#x9;If matchContact.Success Then&#xA;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchContact.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;contact_num = matchContact.Value&#xA;&#x9;&#x9;&#x9;&#x9;Else &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;contact_num = Nothing&#xA;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;Next&#xA;&#xA;Console.WriteLine(&quot;Final Result:&quot;)&#xA;Console.WriteLine(&quot;Case ID: &quot;+ case_id)&#xA;Console.WriteLine(&quot;Case Status: &quot; + case_stat)&#xA;Console.WriteLine(&quot;Case Started: &quot; + case_start)&#xA;Console.WriteLine(&quot;Case Submitted: &quot; + case_submit)&#xA;Console.WriteLine(&quot;Flow: &quot; + flow)&#xA;Console.WriteLine(&quot;Drop-Off Reason: &quot; + drop_off_reason)&#xA;Console.WriteLine(&quot;Source 1: &quot; + source_1)&#xA;Console.WriteLine(&quot;Source 2: &quot; + source_2)&#xA;Console.WriteLine(&quot;Reference Code (For Bank Use Only): &quot; + ref_code)&#xA;Console.WriteLine(&quot;Email Address (For Bank Use Only): &quot; + email_address)&#xA;Console.WriteLine(&quot;Contact Number (For Bank Use Only): &quot; + contact_num)" DisplayName="Invoke code Page 1" sap:VirtualizedContainerService.HintSize="436,174" sap2010:WorkflowViewState.IdRef="InvokeCode_11">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="output">[output_text_split]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="case_id">[out_case_id]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="case_stat">[out_case_stat]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="case_start">[out_date_case_start]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="case_submit">[out_date_case_submit]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="flow">[out_flow]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="drop_off_reason">[out_drop_off]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="source_1">[out_source_1]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="source_2">[out_source_2]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="ref_code">[out_reference_code]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="email_address">[out_email_addr]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="contact_num">[out_contact_num]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,352" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,264" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_string As New List(Of String)&#xD;&#xA;Dim regex As Regex = New System.Text.RegularExpressions.Regex(&quot;((?&lt;=Case Id )+(.|\n)*(?=Case Status))|((?&lt;=Case Status ).*)|((?&lt;=Date / Time Stamp \(Case )(.|\n)*(?=Started))|((?&lt;=Started\)\nDate / Time Stamp \(Case )(.|\n)*(?=Submitted))|((?&lt;=Flow )(.|\n)*(?=Drop-Off))|((?&lt;=Drop-Off Reason )(.|\n)*(?=Source 1))|((?&lt;=Source 1 )(.|\n)*(?=Source 2))|((?&lt;=Source 2 )(.|\n)*(?=Reference))|((?&lt;=Reference Code \(For Bank use).*)|((?&lt;=Email Address \(For Bank use).*)|((?&lt;=Contact Number \(For Bank use).*)&quot;)&#xD;&#xA;Dim m As System.Text.RegularExpressions.Match&#xD;&#xA;&#xD;&#xA;For Each m In regex.Matches(output)&#xD;&#xA;            list_string.Add(m.Value)&#xD;&#xA;&#x9;&#x9;&#x9;Next&#xD;&#xA;&#xD;&#xA;case_id = list_string(0).ToString&#xD;&#xA;case_status = list_string(1).ToString&#xD;&#xA;case_started = list_string(2).ToString&#xD;&#xA;case_submitted = list_string(3).Replace(&quot;Date / Time Stamp (Case &quot;,&quot;&quot;).ToString&#xD;&#xA;flow = list_string(4).ToString&#xD;&#xA;dropoffreason = list_string(5).ToString&#xD;&#xA;source1 = list_string(6).ToString&#xD;&#xA;source2 = list_string(7).ToString&#xD;&#xA;ref_code = list_string(8).ToString&#xD;&#xA;email_addr = list_string(9).ToString&#xD;&#xA;contact_num = list_string(10).ToString&#xD;&#xA;&#xD;&#xA;Console.WriteLine(case_id)&#xD;&#xA;Console.WriteLine(case_status)&#xD;&#xA;Console.WriteLine(case_started)&#xD;&#xA;Console.WriteLine(case_submitted)&#xD;&#xA;Console.WriteLine(flow)&#xD;&#xA;Console.WriteLine(dropoffreason)&#xD;&#xA;Console.WriteLine(source1)&#xD;&#xA;Console.WriteLine(source2)&#xD;&#xA;Console.WriteLine(ref_code)&#xD;&#xA;Console.WriteLine(email_addr)&#xD;&#xA;Console.WriteLine(contact_num)" DisplayName="Invoke code Page 1" sap:VirtualizedContainerService.HintSize="358,174" sap2010:WorkflowViewState.IdRef="InvokeCode_10">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="output">[in_output_text]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="case_id">[out_case_id]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="case_status">[out_case_stat]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="case_started">[out_date_case_start]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="case_submitted">[out_date_case_submit]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="flow">[out_flow]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="dropoffreason">[out_drop_off]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="source1">[out_source_1]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="source2">[out_source_2]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="ref_code">[out_reference_code]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="email_addr">[out_email_addr]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="contact_num">[out_contact_num]</OutArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:LogMessage DisplayName="Final Output Page 1" sap:VirtualizedContainerService.HintSize="436,101" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Case Id: &quot; + out_case_id + Environment.NewLine + &#xA;&quot;Case Status: &quot; + out_case_stat + Environment.NewLine + &#xA;&quot;Date/Time Stamp (Case Started): &quot; + out_date_case_start + Environment.NewLine + &#xA;&quot;Date/Time Stamp (Case Submited): &quot; + out_date_case_submit + Environment.NewLine + &#xA;&quot;Flow: &quot; + out_flow + Environment.NewLine + &#xA;&quot;Drop-Off Reason: &quot; + out_drop_off + Environment.NewLine + &#xA;&quot;Source 1: &quot; + out_source_1 + Environment.NewLine + &#xA;&quot;Source 2: &quot; + out_source_2 + Environment.NewLine + &#xA;&quot;Reference Code (For Bank Use Only): &quot; + out_reference_code + Environment.NewLine + &#xA;&quot;Email Address (For Bank Use Only): &quot; + out_email_addr + Environment.NewLine + &#xA;&quot;Contact Number (For Bank Use Only): &quot; + out_contact_num]" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{out_case_id,out_case_stat,out_date_case_start,out_date_case_submit,out_flow,out_drop_off,out_source_1,out_source_2, out_reference_code, out_email_addr,out_contact_num}]" DataTable="[out_data_table]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="436,195" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <ui:WriteRange AddHeaders="True" DataTable="[out_data_table]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="436,125" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2.xlsx" />
+  </Sequence>
+</Activity>

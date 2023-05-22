@@ -1,0 +1,240 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Page7_Activity" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_output_text" Type="InArgument(x:String)" />
+    <x:Property Name="in_prerequisites" Type="InArgument(x:String)" />
+    <x:Property Name="in_watch_list" Type="InArgument(x:String)" />
+    <x:Property Name="in_preliminary_name" Type="InArgument(x:String)" />
+    <x:Property Name="in_final_name" Type="InArgument(x:String)" />
+    <x:Property Name="in_preliminary_risk" Type="InArgument(x:String)" />
+    <x:Property Name="in_final_risk" Type="InArgument(x:String)" />
+    <x:Property Name="in_cif_creation" Type="InArgument(x:String)" />
+    <x:Property Name="in_kyc_master" Type="InArgument(x:String)" />
+    <x:Property Name="in_kyc_occurence" Type="InArgument(x:String)" />
+    <x:Property Name="in_customer_contact" Type="InArgument(x:String)" />
+    <x:Property Name="in_account_creation" Type="InArgument(x:String)" />
+    <x:Property Name="in_address_create" Type="InArgument(x:String)" />
+    <x:Property Name="in_address_linking" Type="InArgument(x:String)" />
+    <x:Property Name="in_connected_parties" Type="InArgument(x:String)" />
+    <x:Property Name="in_fatca" Type="InArgument(x:String)" />
+    <x:Property Name="in_crs" Type="InArgument(x:String)" />
+    <x:Property Name="in_c2c_tag" Type="InArgument(x:String)" />
+    <x:Property Name="in_svs_shell" Type="InArgument(x:String)" />
+    <x:Property Name="in_segment" Type="InArgument(x:String)" />
+    <x:Property Name="in_terms_conditions" Type="InArgument(x:String)" />
+    <x:Property Name="in_user1_name" Type="InArgument(x:String)" />
+    <x:Property Name="in_user1_mobile" Type="InArgument(x:String)" />
+    <x:Property Name="in_user1_email" Type="InArgument(x:String)" />
+    <x:Property Name="in_user1_userID" Type="InArgument(x:String)" />
+    <x:Property Name="in_user1_role" Type="InArgument(x:String)" />
+    <x:Property Name="in_user2_name" Type="InArgument(x:String)" />
+    <x:Property Name="in_user2_mobile" Type="InArgument(x:String)" />
+    <x:Property Name="in_user2_email" Type="InArgument(x:String)" />
+    <x:Property Name="in_user2_userID" Type="InArgument(x:String)" />
+    <x:Property Name="in_user2_role" Type="InArgument(x:String)" />
+    <x:Property Name="out_data_table" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_org_id" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,1211</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Page7_Activity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Page7_Activity" sap:VirtualizedContainerService.HintSize="442,1146" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="400,1056" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="s:String[]" Name="output_text_split" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BuildDataTable DataTable="[out_data_table]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Pre-requisites_x0020__x002F__x0020_Enquiry&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Watch_x0020_List&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Preliminary_x0020_Name_x0020_Screening&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Final_x0020_Name_x0020_Screening&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Preliminary_x0020_Risk_x0020_Scoring&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Final_x0020_Risk_x0020_Scoring&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;CIF_x0020_Creation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;KYC_x0020_Master_x0020_Update&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;KYC_x0020_Occurence_x0020_Update&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Customer_x0020_Contact_x0020_Update&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Account_x0020_Creation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Address_x0020_Create_x0020__x002F__x0020_Update&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Address_x0020_Linking&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Connected_x0020_Parties_x0020_CIF_x0020_Creation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;FATCA&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;CRS&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;C2C_x0020_Tagging&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;SVS_x0020_Shell_x0020_Creation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Terms_x0020_and_x0020_Conditions&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Segment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;OrgID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_1_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_1_x0020_Mobile&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_1_x0020_Email&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_1_x0020_User_x0020_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_1_x0020_Role&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_2_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_2_x0020_Mobile&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_2_x0020_Email&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_2_x0020_User_x0020_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_2_x0020_Role&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+      <Assign sap:VirtualizedContainerService.HintSize="338,70" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[output_text_split]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[in_output_text.Split(New String() {Environment.NewLine},StringSplitOptions.None)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="For Each strRow As String In output &#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Pre-requisites / Enquiry&#xD;&#xA;&#x9;If strRow.Contains(&quot;Pre-requisites&quot;) Then&#xD;&#xA;&#x9;&#x9;pre_requisites = LTrim(strRow.Replace(&quot;Pre-requisites / Enquiry&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Watch List&#xD;&#xA;&#x9;If strRow.Contains(&quot;Watch List&quot;) Then&#xD;&#xA;&#x9;&#x9;watch_list = LTrim(strRow.Replace(&quot;Watch List&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Preliminary Name Screening&#xD;&#xA;&#x9;If strRow.Contains(&quot;Preliminary Name Screening&quot;) Then&#xD;&#xA;&#x9;&#x9;preliminary_name = LTrim(strRow.Replace(&quot;Preliminary Name Screening&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Final Name Screening&#xD;&#xA;&#x9;If strRow.Contains(&quot;Final Name Screening&quot;) Then&#xD;&#xA;&#x9;&#x9;final_name = LTrim(strRow.Replace(&quot;Final Name Screening&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Preliminary Risk Scoring&#xD;&#xA;&#x9;If strRow.Contains(&quot;Preliminary Risk Scoring&quot;) Then&#xD;&#xA;&#x9;&#x9;preliminary_risk = LTrim(strRow.Replace(&quot;Preliminary Risk Scoring&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Final Risk Scoring&#xD;&#xA;&#x9;If strRow.Contains(&quot;Final Risk Scoring&quot;) Then&#xD;&#xA;&#x9;&#x9;final_risk = LTrim(strRow.Replace(&quot;Final Risk Scoring&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'CIF Creation&#xD;&#xA;&#x9;If strRow.Contains(&quot;CIF Creation&quot;) Then&#xD;&#xA;&#x9;&#x9;cif_creation = LTrim(strRow.Replace(&quot;CIF Creation&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'KYC Master Update&#xD;&#xA;&#x9;If strRow.Contains(&quot;KYC Master Update&quot;) Then&#xD;&#xA;&#x9;&#x9;kyc_master = LTrim(strRow.Replace(&quot;KYC Master Udpate&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'KYC Occurence Update&#xD;&#xA;&#x9;If strRow.Contains(&quot;KYC Occurence Update&quot;) Then&#xD;&#xA;&#x9;&#x9;kyc_occurence = LTrim(strRow.Replace(&quot;KYC Occurence Update&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Customer Contact Update&#xD;&#xA;&#x9;If strRow.Contains(&quot;Customer Contact Update&quot;) Then&#xD;&#xA;&#x9;&#x9;customer_contact = LTrim(strRow.Replace(&quot;Customer Contact Update&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Account Creation&#xD;&#xA;&#x9;If strRow.Contains(&quot;Account Creation&quot;) Then&#xD;&#xA;&#x9;&#x9;account_creation = LTrim(strRow.Replace(&quot;Account Creation&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Address Create/Update&#xD;&#xA;&#x9;If strRow.Contains(&quot;Address Create/Update&quot;) Then&#xD;&#xA;&#x9;&#x9;address_create = LTrim(strRow.Replace(&quot;Address Create/Update&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Address Linking&#xD;&#xA;&#x9;If strRow.Contains(&quot;Address Linking&quot;) Then&#xD;&#xA;&#x9;&#x9;address_link = LTrim(strRow.Replace(&quot;Address Linking&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Connected Parties CIF Creation&#xD;&#xA;&#x9;If strRow.Contains(&quot;Connected Parties&quot;) Then&#xD;&#xA;&#x9;&#x9;connected_parties = LTrim(strRow.Replace(&quot;Connected Parties CIF&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'FATCA&#xD;&#xA;&#x9;If strRow.Contains(&quot;FATCA&quot;) Then&#xD;&#xA;&#x9;&#x9;fatca = LTrim(strRow.Replace(&quot;FATCA&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'CRS&#xD;&#xA;&#x9;If strRow.Contains(&quot;CRS&quot;) Then&#xD;&#xA;&#x9;&#x9;crs = LTrim(strRow.Replace(&quot;CRS&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'C2C Tagging&#xD;&#xA;&#x9;If strRow.Contains(&quot;C2C Tagging&quot;) Then&#xD;&#xA;&#x9;&#x9;c2c_tag = LTrim(strRow.Replace(&quot;C2C Tagging&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'SVS Shell Creation&#xD;&#xA;&#x9;If strRow.Contains(&quot;SVS Shell&quot;) Then&#xD;&#xA;&#x9;&#x9;svs_shell = LTrim(strRow.Replace(&quot;SVS Shell Creation&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Terms and Conditions&#xD;&#xA;&#x9;If strRow.Contains(&quot;Terms &amp; Conditions&quot;) And strRow.Contains(&quot;Agree&quot;) Then&#xD;&#xA;&#x9;&#x9;terms_conditions = &quot;Agree&quot;&#xD;&#xA;&#x9;Else If strRow.Contains(&quot;Terms &amp; Conditions&quot;) And strRow.Contains(&quot;Disagree&quot;) Then&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Segment&#xD;&#xA;&#x9;If strRow.Contains(&quot;Segment&quot;) Then&#xD;&#xA;&#x9;&#x9;Dim regexSegment As Regex = New System.Text.RegularExpressions.Regex(&quot;\d{1,1}&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchSegment As Match = regexSegment.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;If matchSegment.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchSegment.Value)&#xD;&#xA;&#x9;&#x9;&#x9;segment = matchSegment.Value&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'OrgID&#xD;&#xA;&#x9;If strRow.Contains(&quot;OrgID&quot;) Then&#xD;&#xA;&#x9;&#x9;org_id = LTrim(strRow.Replace(&quot;OrgID&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'User 1 Name&#xD;&#xA;&#x9;If strRow.Contains(&quot;User 1 Name&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;Dim regexUser1Name As Regex = New System.Text.RegularExpressions.Regex(&quot;[A-Z{1,1}](\d{1,1})\s[a-zA-Z0-9\s]+[a-zA-Z0-9\s]+&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;Dim matchUser1Name As Match = regexUser1Name.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;If matchUser1Name.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchUser1Name.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;user1_name = matchUser1Name.Value&#xD;&#xA;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'User 1 Mobile&#xD;&#xA;&#x9;If strRow.Contains(&quot;User 1 Mobile&quot;) Then&#xD;&#xA;&#x9;&#x9;Dim regexUser1Mobile As Regex = New System.Text.RegularExpressions.Regex(&quot;(\+?6?01)?(\(?[0-9]{3}\)?|[0-9]{8})( |-)?([0-9]{8}( |-)?[0-9]{8}|[a-zA-Z0-9]{8})&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchUser1Mobile As Match = regexUser1Mobile.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchUser1Mobile.Success Then&#xD;&#xA;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchUser1Mobile.Value)&#xD;&#xA;&#x9;&#x9;&#x9;user1_mobile = matchUser1Mobile.Value&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'User 1 Email&#xD;&#xA;&#x9;If strRow.Contains(&quot;User 1 Email&quot;) Then&#xD;&#xA;&#x9;&#x9;Dim regexUser1Email As Regex = New Regex(&quot;(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|&quot; + &quot;(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*&quot;+&quot;)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchUser1Email As Match = regexUser1Email.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;If matchUser1Email.Success Then&#xD;&#xA;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchUser1Email.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;user1_email = matchUser1Email.Value&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'User 1 ID&#xD;&#xA;&#x9;If strRow.Contains(&quot;User 1 User ID&quot;) Then&#xD;&#xA;&#x9;&#x9;user1_id = LTrim(strRow.Replace(&quot;User 1 User ID&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'User 1 Role&#xD;&#xA;&#x9;If strRow.Contains(&quot;User 1 Role&quot;) Then&#xD;&#xA;&#x9;&#x9;user1_role = LTrim(strRow.Replace(&quot;User 1 Role&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'User 2 Name&#xD;&#xA;&#x9;If strRow.Contains(&quot;User 2 Name&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;Dim regexUser2Name As Regex = New System.Text.RegularExpressions.Regex(&quot;[A-Z{1,1}](\d{1,1})\s[a-zA-Z0-9\s]+[a-zA-Z0-9\s]+&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;Dim matchUser2Name As Match = regexUser2Name.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;If matchUser2Name.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchUser2Name.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;user2_name = matchUser2Name.Value&#xD;&#xA;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'User 2 Mobile&#xD;&#xA;&#x9;If strRow.Contains(&quot;User 2 Mobile&quot;) Then&#xD;&#xA;&#x9;&#x9;Dim regexUser2Mobile As Regex = New System.Text.RegularExpressions.Regex(&quot;(\+?6?01)?(\(?[0-9]{3}\)?|[0-9]{8})( |-)?([0-9]{8}( |-)?[0-9]{8}|[a-zA-Z0-9]{8})&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchUser2Mobile As Match = regexUser2Mobile.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchUser2Mobile.Success Then&#xD;&#xA;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchUser2Mobile.Value)&#xD;&#xA;&#x9;&#x9;&#x9;user2_mobile = matchUser2Mobile.Value&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'User 2 Email&#xD;&#xA;&#x9;If strRow.Contains(&quot;User 2 Email&quot;) Then&#xD;&#xA;&#x9;&#x9;Dim regexUser2Email As Regex = New Regex(&quot;(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|&quot; + &quot;(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*&quot;+&quot;)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchUser2Email As Match = regexUser2Email.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;If matchUser2Email.Success Then&#xD;&#xA;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchUser2Email.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;user2_email = matchUser2Email.Value&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'User 2 ID&#xD;&#xA;&#x9;If strRow.Contains(&quot;User 2 User ID&quot;) Then&#xD;&#xA;&#x9;&#x9;user2_id = LTrim(strRow.Replace(&quot;User 2 User ID&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'User 2 Role&#xD;&#xA;&#x9;If strRow.Contains(&quot;User 2 Role&quot;) Then&#xD;&#xA;&#x9;&#x9;user2_role = LTrim(strRow.Replace(&quot;User 2 Role&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;Next" DisplayName="Invoke code Page 7" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="s:String[]" x:Key="output">
+            <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="output_text_split" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="pre_requisites">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_prerequisites" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="watch_list">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_watch_list" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="preliminary_name">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_preliminary_name" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="final_name">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_final_name" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="preliminary_risk">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_preliminary_risk" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="final_risk">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_final_risk" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="cif_creation">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_cif_creation" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="kyc_master">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_kyc_master" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="kyc_occurence">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_kyc_occurence" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="customer_contact">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_customer_contact" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="account_creation">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_account_creation" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="address_create">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_address_create" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="address_link">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_address_linking" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="connected_parties">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_connected_parties" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="fatca">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_fatca" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="crs">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_crs" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="c2c_tag">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_c2c_tag" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="svs_shell">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_svs_shell" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="segment">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_segment" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="terms_conditions">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_terms_conditions" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="user1_name">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_user1_name" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="user1_mobile">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_user1_mobile" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="user1_email">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_user1_email" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="user1_id">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_user1_userID" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="user1_role">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_user1_role" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="user2_name">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_user2_name" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="user2_mobile">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_user2_mobile" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="user2_email">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_user2_email" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="user2_id">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_user2_userID" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="user2_role">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_user2_role" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="org_id">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_org_id" />
+          </OutArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:LogMessage DisplayName="Final Output Page 6" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Pre-requisites / Enquiry &quot; + in_prerequisites + Environment.NewLine + &#xA;&quot;Watch List: &quot; + in_watch_list + Environment.NewLine + &#xA;&quot;Preliminary Name Screening: &quot; + in_preliminary_name + Environment.NewLine + &#xA;&quot;Final Name Screening: &quot; + in_final_name + Environment.NewLine + &#xA;&quot;Final Risk Scoring: &quot; + in_final_risk + Environment.NewLine + &#xA;&quot;CIF Creation: &quot; + in_cif_creation + Environment.NewLine + &#xA;&quot;KYC Master Update: &quot; + in_kyc_master + Environment.NewLine + &#xA;&quot;KYC Occurence Update: &quot; + in_kyc_occurence + Environment.NewLine + &#xA;&quot;Customer Contact Update: &quot; + in_customer_contact + Environment.NewLine + &#xA;&quot;Account Creation: &quot; + in_account_creation + Environment.NewLine + &#xA;&quot;Address Create/Update: &quot; + in_address_create + Environment.NewLine + &#xA;&quot;Address Linking: &quot; + in_address_linking + Environment.NewLine + &#xA;&quot;Connected Parties CIF Creation: &quot; + in_connected_parties + Environment.NewLine + &#xA;&quot;FATCA: &quot; + in_fatca + Environment.NewLine + &#xA;&quot;CRS: &quot; + in_crs + Environment.NewLine + &#xA;&quot;C2C Tagging: &quot; + in_c2c_tag + Environment.NewLine + &#xA;&quot;SVS Shell Creation: &quot; + in_svs_shell + Environment.NewLine + &#xA;&quot;Terms &amp; Conditions: &quot; + in_terms_conditions + Environment.NewLine + &#xA;&quot;Segment: &quot; + in_segment + Environment.NewLine + &#xA;&quot;User 1 Name: &quot; + in_user1_name + Environment.NewLine + &#xA;&quot;User 1 Mobile: &quot; + in_user1_mobile + Environment.NewLine +&#xA;&quot;User 1 Email: &quot; + in_user1_email + Environment.NewLine + &#xA;&quot;User 1 User ID: &quot; + in_user1_userID + Environment.NewLine + &#xA;&quot;User 1 Role: &quot; + in_user1_role + Environment.NewLine + &#xA;&quot;User 2 Name: &quot; + in_user2_name + Environment.NewLine + &#xA;&quot;User 2 Mobile: &quot; + in_user2_mobile + Environment.NewLine +&#xA;&quot;User 2 Email: &quot; + in_user2_email + Environment.NewLine + &#xA;&quot;User 2 User ID: &quot; + in_user2_userID + Environment.NewLine + &#xA;&quot;User 2 Role: &quot; + in_user2_role]" />
+      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_prerequisites,in_watch_list,in_preliminary_name,in_final_name,in_preliminary_risk,in_final_risk,in_cif_creation,in_kyc_master,in_kyc_occurence,in_customer_contact,in_account_creation,in_address_create,in_address_linking,in_connected_parties,in_fatca,in_crs,in_c2c_tag,in_svs_shell,in_terms_conditions,in_segment,in_org_id,in_user1_name,in_user1_mobile,in_user1_email,in_user1_userID,in_user1_role,in_user2_name,in_user2_mobile,in_user2_email,in_user2_userID,in_user2_role}]" DataTable="[out_data_table]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="338,195" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+      <ui:WriteRange AddHeaders="True" DataTable="[out_data_table]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="CU1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2.xlsx" />
+    </Sequence>
+  </Sequence>
+</Activity>

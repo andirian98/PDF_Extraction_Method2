@@ -1,0 +1,174 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Page5_Activity" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_output_text" Type="InArgument(x:String)" />
+    <x:Property Name="in_fatca_classification" Type="InArgument(x:String)" />
+    <x:Property Name="in_crs_classification" Type="InArgument(x:String)" />
+    <x:Property Name="in_country_tax_residency" Type="InArgument(x:String)" />
+    <x:Property Name="in_active_business" Type="InArgument(x:String)" />
+    <x:Property Name="in_date_declaration" Type="InArgument(x:String)" />
+    <x:Property Name="in_duitnow_registration" Type="InArgument(x:String)" />
+    <x:Property Name="in_preliminary_screening_date" Type="InArgument(x:String)" />
+    <x:Property Name="in_preliminary_screening_hit" Type="InArgument(x:String)" />
+    <x:Property Name="in_final_screening_date" Type="InArgument(x:String)" />
+    <x:Property Name="in_final_screening_hit" Type="InArgument(x:String)" />
+    <x:Property Name="in_watchlist_screening_date" Type="InArgument(x:String)" />
+    <x:Property Name="in_watchlist_hit" Type="InArgument(x:String)" />
+    <x:Property Name="out_data_table" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_restriction_text" Type="InArgument(x:String)" />
+    <x:Property Name="in_constitution" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,1211</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Page5_Activity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Page5_Activity" sap:VirtualizedContainerService.HintSize="442,1146" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="400,1056" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="s:String[]" Name="output_text_split" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BuildDataTable DataTable="[out_data_table]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Restriction_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Constitution&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020_of_x0020_Declaration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;FATCA_x0020_Classification&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CRS_x0020_Classification&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Tax_x0020_Residency&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Active_x0020_Business&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DuitNow_x0020_Registration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Preliminary_x0020_Screening_x0020_Date_x0020_Time_x0020_Stamp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Preliminary_x0020_Screening_x0020_Hit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Final_x0020_Screening_x0020_Date_x0020_Time_x0020_Stamp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Final_x0020_Screening_x0020_Hit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Watchlist_x0020_Screening_x0020_Date_x0020_Time_x0020_Stamp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Watchlist_x0020_Hit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+      <Assign sap:VirtualizedContainerService.HintSize="338,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[output_text_split]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[in_output_text.Split(New String() {Environment.NewLine},StringSplitOptions.None)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="For Each strRow As String In output &#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Constitution&#xD;&#xA;&#x9;If strRow.Contains(&quot;Constitution&quot;) Then&#xD;&#xA;&#x9;&#x9;constitution = LTrim(strRow.Replace(&quot;Constitution&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#xD;&#xA;&#x9;'Date of Declaration&#xD;&#xA;&#x9;If strRow.Contains(&quot;Date of Declaration&quot;) Then&#xD;&#xA;&#x9;&#x9;Dim regexDateDeclaration As Regex = New System.Text.RegularExpressions.Regex(&quot;(?:(?:(?:(?:0?[13578]|1[02])(?&lt;first&gt;\/|-|\.)31)\k&lt;first&gt;|(?:(?:0?[13-9]|1[0-2])(?&lt;second&gt;\/|-|\.)(?:29|30)\k&lt;second&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:0?2(?&lt;third&gt;\/|-|\.)29\k&lt;third&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:(?:0?[1-9])|(?:1[0-2]))(?&lt;fourth&gt;\/|-|\.)(?:0?[1-9]|1\d|2[0-8])\k&lt;fourth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:(?:(?:Jan|Mar|May|Jul|Aug|Oct|Dec)(?&lt;fifth&gt;\/|-|\s)31)\k&lt;fifth&gt;|(?:(?:Jan|Mar|Apr|May|June|Jul|Aug|Sep|Oct|Nov|Dec)(?&lt;sixth&gt;\/|-|\s)(?:29|30)\k&lt;sixth&gt;))(?:(?:1[6-9]|[2-9]\d)?\d{2})|(?:February(?&lt;seventh&gt;\/|-|\s)29\k&lt;seventh&gt;(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))|(?:Jan|Feb|Mar|Apr|May|June|Jul|Aug|Sep|Oct|Nov|Dec)(?&lt;eighth&gt;\/|-|\s)(?:0?[1-9]|1\d|2[0-8])\k&lt;eighth&gt;(?:(?:1[6-9]|[2-9]\d)?\d{2}))+&quot;)&#xD;&#xA;&#x9;&#x9;Dim regexTimeDeclaration As Regex = New System.Text.RegularExpressions.Regex(&quot;(1[0-2]|0?[1-9]):([0-5]?[0-9]):([0-5]?[0-9])\s([AaPp][Mm])&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchDateDeclaration As Match = regexDateDeclaration.Match(strRow)&#xD;&#xA;&#x9;&#x9;Dim matchTimeDeclaration As Match = regexTimeDeclaration.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;If matchDateDeclaration.Success AND matchTimeDeclaration.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchDateDeclaration.Value)&#xD;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchTimeDeclaration.Value)&#xD;&#xA;&#x9;&#x9;&#x9;date_declaration = matchDateDeclaration.Value + &quot; &quot; + matchTimeDeclaration.Value&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'FATCA Classification&#xD;&#xA;&#x9;If strRow.Contains(&quot;FATCA Classification&quot;) Then&#xD;&#xA;&#x9;&#x9;fatca_classification = LTrim(strRow.Replace(&quot;FATCA Classification&quot;,&quot;&quot;))&#xD;&#xA;&#x9;&#x9;'If strRow.Contains(&quot;Active NFFE&quot;) Then&#xD;&#xA;&#x9;&#x9;'&#x9;fatca_classification = &quot;Active NFFE&quot;&#xD;&#xA;&#x9;&#x9;'Else If strRow.Contains(&quot;US Person&quot;) Then&#xD;&#xA;&#x9;&#x9;'&#x9;fatca_classification = &quot;US Person&quot;&#xD;&#xA;&#x9;&#x9;'Else If strRow.Contains(&quot;Passive NFFE&quot;) Then &#xD;&#xA;&#x9;&#x9;'&#x9;fatca_classification = &quot;Passive NFFE&quot;&#xD;&#xA;&#x9;&#x9;'Else If strRow.Contains(&quot;Public listed non-FI entity and its subsidiary&quot;) Then&#xD;&#xA;&#x9;&#x9;'&#x9;fatca_classification = &quot;Public listed non-FI entity and its subsidiary&quot;&#xD;&#xA;&#x9;&#x9;'End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;'Console.WriteLine(&quot;Result:&quot; + strRow.Contains(&quot;FATCA Classification&quot;).ToString)&#xD;&#xA;&#x9;'CRS Classification&#xD;&#xA;&#x9;If strRow.Contains(&quot;CRS Classification&quot;) Then&#xD;&#xA;&#x9;&#x9;crs_classification = LTrim(strRow.Replace(&quot;CRS Classification&quot;,&quot;&quot;))&#xD;&#xA;&#x9;&#x9;'If strRow.Contains(&quot;Active NFE&quot;) Then&#xD;&#xA;&#x9;&#x9;'&#x9;crs_classification = &quot;Active NFFE&quot;&#xD;&#xA;&#x9;&#x9;'Else If strRow.Contains(&quot;US Person&quot;) Then&#xD;&#xA;&#x9;&#x9;'&#x9;crs_classification = &quot;US Person&quot;&#xD;&#xA;&#x9;&#x9;'Else If strRow.Contains(&quot;Passive NFE&quot;) Then &#xD;&#xA;&#x9;&#x9;'&#x9;crs_classification = &quot;Passive NFFE&quot;&#xD;&#xA;&#x9;&#x9;'Else If strRow.Contains(&quot;Public listed non-FI entity and its subsidiary&quot;) Then&#xD;&#xA;&#x9;&#x9;'&#x9;crs_classification = &quot;Public listed non-FI entity and its subsidiary&quot;&#xD;&#xA;&#x9;&#x9;'End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Country of Tax Residency&#xD;&#xA;&#x9;If strRow.Contains(&quot;Country of Tax Residency&quot;) Then&#xD;&#xA;&#x9;&#x9;country_tax_residency = LTrim(strRow.Replace(&quot;Country of Tax Residency&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Active Business&#xD;&#xA;&#x9;If strRow.Contains(&quot;Active Business&quot;) Then&#xD;&#xA;&#x9;&#x9;If strRow.Contains(&quot;Yes&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;active_business = &quot;Yes&quot;&#xD;&#xA;&#x9;&#x9;Else If strRow.Contains(&quot;No&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;active_business = &quot;No&quot;&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'DuitNow Registration&#xD;&#xA;&#x9;If strRow.Contains(&quot;DuitNow Registration&quot;) Then &#xD;&#xA;&#x9;&#x9;If strRow.Contains(&quot;Yes&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;duitnow_registration = &quot;Yes&quot;&#xD;&#xA;&#x9;&#x9;Else If strRow.Contains(&quot;No&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;duitnow_registration = &quot;No&quot;&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Prelimirary Screening Date&#xD;&#xA;&#x9;If strRow.Contains(&quot;Preliminary Screening Date&quot;) Then&#xD;&#xA;&#x9;&#x9;preliminary_screening_date = LTrim(strRow.Replace(&quot;Preliminary Screening Date&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Preliminary Screening Hit&#xD;&#xA;&#x9;If strRow.Contains(&quot;Preliminary Screening Hit&quot;) Then&#xD;&#xA;&#x9;&#x9;preliminary_screening_hit = LTrim(strRow.Replace(&quot;Preliminary Screening Hit&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Final Screening Date Time&#xD;&#xA;&#x9;If strRow.Contains(&quot;Final Screening Date Time&quot;) Then&#xD;&#xA;&#x9;&#x9;final_screening_date_time = LTrim(strRow.Replace(&quot;Final Screening Date Time&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Final Screening Hit&#xD;&#xA;&#x9;If strRow.Contains(&quot;Final Screening Hit&quot;) Then&#xD;&#xA;&#x9;&#x9;final_screening_hit = LTrim(strRow.Replace(&quot;Final Screening Hit&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Watchlist Screening Date Time&#xD;&#xA;&#x9;If strRow.Contains(&quot;Watchlist Screening Date Time&quot;) Then&#xD;&#xA;&#x9;&#x9;watchlist_screening_date_time = LTrim(strRow.Replace(&quot;Watchlist Screening Date Time&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Watchlist Hit&#xD;&#xA;&#x9;If strRow.Contains(&quot;Watchlist Hit&quot;) Then&#xD;&#xA;&#x9;&#x9;watchlist_hit = LTrim(strRow.Replace(&quot;Watchlist Hit&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;Dim regexRestrictionText As Regex = New System.Text.RegularExpressions.Regex(&quot;(?=.CASE)(.|\n)*(?=FATCA/CRS)&quot;,RegexOptions.Multiline)&#xD;&#xA;Dim matchRestrictionText As Match = regexRestrictionText.Match(outputText)&#xD;&#xA;&#xD;&#xA;If matchRestrictionText.Success Then&#xD;&#xA;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchRestrictionText.Value)&#xD;&#xA;&#x9;restriction_text = matchRestrictionText.Value&#xD;&#xA;&#x9;If restriction_text.Contains(&quot;Restriction Text&quot;) Then&#xD;&#xA;&#x9;&#x9;restriction_text = restriction_text.Replace(&quot;Restriction Text&quot;,&quot;&quot;)&#xD;&#xA;&#x9;End If&#xD;&#xA;End If&#xD;&#xA;&#x9;&#x9;" DisplayName="Invoke code Page 5" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="s:String[]" x:Key="output">
+            <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="output_text_split" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="date_declaration">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_date_declaration" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="fatca_classification">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_fatca_classification" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="crs_classification">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_crs_classification" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="active_business">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_active_business" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="country_tax_residency">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_country_tax_residency" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="duitnow_registration">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_duitnow_registration" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="preliminary_screening_date">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_preliminary_screening_date" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="preliminary_screening_hit">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_preliminary_screening_hit" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="final_screening_date_time">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_final_screening_date" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="final_screening_hit">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_final_screening_hit" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="watchlist_screening_date_time">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_watchlist_screening_date" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="watchlist_hit">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_watchlist_hit" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="constitution">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_constitution" />
+          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="outputText">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_output_text" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="restriction_text">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_restriction_text" />
+          </OutArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:LogMessage DisplayName="Final Output Page 5" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Date of Declaration: &quot; + in_date_declaration + Environment.NewLine + &#xA;&quot;FATCA Classification: &quot; + in_fatca_classification + Environment.NewLine + &#xA;&quot;CRS Classification: &quot; + in_crs_classification + Environment.NewLine + &#xA;&quot;Country of Tax Residency: &quot; + in_country_tax_residency + Environment.NewLine + &#xA;&quot;Active Business: &quot; + in_active_business + Environment.NewLine + &#xA;&quot;DuitNow Registration: &quot; + in_duitnow_registration + Environment.NewLine + &#xA;&quot;Preliminary Screening Date Time Stamp: &quot; + in_preliminary_screening_date + Environment.NewLine + &#xA;&quot;Preliminary Screening Hit: &quot; + in_preliminary_screening_hit + Environment.NewLine + &#xA;&quot;Final Screening Date Time Stamp: &quot; + in_final_screening_date + Environment.NewLine + &#xA;&quot;Final Screening Hit: &quot; + in_final_screening_hit + Environment.NewLine + &#xA;&quot;Watchlist Screening Date Time Stamp: &quot; + in_watchlist_screening_date + Environment.NewLine + &#xA;&quot;Watchlist Hit: &quot; + in_watchlist_hit]" />
+      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_restriction_text,in_constitution,in_date_declaration,in_fatca_classification,in_crs_classification,in_country_tax_residency,in_active_business,in_duitnow_registration,in_preliminary_screening_date,in_preliminary_screening_hit,in_final_screening_date,in_final_screening_hit,in_watchlist_screening_date,in_watchlist_hit}]" DataTable="[out_data_table]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="338,195" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+      <ui:WriteRange AddHeaders="True" DataTable="[out_data_table]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="BL1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2.xlsx" />
+    </Sequence>
+  </Sequence>
+</Activity>

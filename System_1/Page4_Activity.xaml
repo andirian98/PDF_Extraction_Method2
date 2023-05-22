@@ -1,0 +1,256 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Page4_Activity" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_output_text" Type="InArgument(x:String)" />
+    <x:Property Name="in_sign_nric" Type="InArgument(x:String)" />
+    <x:Property Name="in_sign_designation" Type="InArgument(x:String)" />
+    <x:Property Name="in_sign_name" Type="InArgument(x:String)" />
+    <x:Property Name="out_data_table" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_individual_nric" Type="InArgument(x:String)" />
+    <x:Property Name="in_constitution" Type="InArgument(x:String)" />
+    <x:Property Name="in_board_resolution" Type="InArgument(x:String)" />
+    <x:Property Name="in_individual2_nric" Type="InArgument(x:String)" />
+    <x:Property Name="in_signatory2_name" Type="InArgument(x:String)" />
+    <x:Property Name="in_signatory2_nric" Type="InArgument(x:String)" />
+    <x:Property Name="in_signatory2_designation" Type="InArgument(x:String)" />
+    <x:Property Name="in_signatory2_signature" Type="InArgument(x:String)" />
+    <x:Property Name="in_signing_condition" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,2040</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Page4_Activity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="76">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.PDF.Activities.PDF</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>BalaReva.Excel.Sheets</x:String>
+      <x:String>BalaReva.Excel.Base</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Dynamic</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>BalaReva.Excel</AssemblyReference>
+      <AssemblyReference>BalaReva.Excel.Base</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Page4_Activity" sap:VirtualizedContainerService.HintSize="600,1975" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="558,1885" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="s:String[]" Name="output_text_split" />
+        <Variable x:TypeArguments="x:String" Name="signatory_signature" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BuildDataTable DataTable="[out_data_table]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="496,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Signing_x0020_Condition&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Individual_x0020_1_x0020_NRIC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_1_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_1_x0020_NRIC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_1_x0020_Designation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_1_x0020_Signature&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Individual_x0020_2_x0020_NRIC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_2_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_2_x0020_NRIC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_2_x0020_Designation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_2_x0020_Signature&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Constitution_x002F_M_x0026_A_x0020_Template_x0020_Declaration_x0020_Flag&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Board_x0020_Resolution_x0020_Declaration_x0020_Flag&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+      <Assign sap:VirtualizedContainerService.HintSize="496,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[output_text_split]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[in_output_text.Split(New String() {Environment.NewLine},StringSplitOptions.None)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <upap:ExtractImagesFromPDF DisplayName="Extract Images From PDF" FileName="Split_PDF\MainREF_Form2_Page4.pdf" sap:VirtualizedContainerService.HintSize="496,69" sap2010:WorkflowViewState.IdRef="ExtractImagesFromPDF_1" OutputFolderName="C:\Users\Admin\Downloads\MainREFolder" />
+      <ui:InvokePowerShell x:TypeArguments="sma:PSObject" ContinueOnError="{x:Null}" CommandText="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2_Page4.1.1.png" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="496,69" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_2">
+        <ui:InvokePowerShell.PowerShellVariables>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokePowerShell.PowerShellVariables>
+      </ui:InvokePowerShell>
+      <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="496,556" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="ui:GenericValue" Name="CustomDdimagecontrol" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'MainREF_F Applicati'" sap:VirtualizedContainerService.HintSize="434,434" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="d2d367de6917e781e975f77b0079464b" Selector="&lt;wnd app='applicationframehost.exe' appid='Microsoft.Windows.Photos_8wekyb3d8bbwe!App' title='MainREF_Form2_Page4.1.1.png ‎- Photos' /&gt;">
+          <ui:WindowScope.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,278" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'custom  D2DImageControl'" sap:VirtualizedContainerService.HintSize="358,188" sap2010:WorkflowViewState.IdRef="GetOCRText_4">
+                  <ui:GetOCRText.OCREngine>
+                    <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                      <ActivityFunc.Argument>
+                        <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                      </ActivityFunc.Argument>
+                      <p:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" UseLocalServer="{x:Null}" ApiKey="ThkGuaenjIjZpulfQPlZD5ZizfwGi58MQ38rQuD5s18zNsOWAv+s/Q0p9Yoh1BH/zq4xnTKajr9aj9Cs4vF//g==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,32" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_2" Image="[Image]" Language="auto" Profile="None" Scale="1" Text="[in_individual_nric]" Timeout="100000" />
+                    </ActivityFunc>
+                  </ui:GetOCRText.OCREngine>
+                  <ui:GetOCRText.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f49dd780-2a48-437f-9ccd-898f193f3809" InformativeScreenshot="31f5d3c906cbf44a3aa2698694698f79" Selector="&lt;uia automationid='D2DImageControl' role='custom' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:GetOCRText.Target>
+                  <ui:GetOCRText.Text>
+                    <OutArgument x:TypeArguments="x:String">[in_individual_nric]</OutArgument>
+                  </ui:GetOCRText.Text>
+                </ui:GetOCRText>
+              </Sequence>
+            </ActivityAction>
+          </ui:WindowScope.Body>
+        </ui:WindowScope>
+      </Sequence>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="For Each strRow As String In output &#xD;&#xA;&#xD;&#xA;&#x9;'Signing Condition&#xD;&#xA;&#x9;If strRow.Contains(&quot;Signing Condition&quot;) Then&#xD;&#xA;&#x9;&#x9;signing_condition = LTrim(strRow.Replace(&quot;Signing Condition&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Signatory 1 Name&#xD;&#xA;&#x9;If strRow.Contains(&quot;Signatory 1 Name&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;Dim regexSignName As Regex = New System.Text.RegularExpressions.Regex(&quot;[A-Z{1,1}](\d{1,1})\s[a-zA-Z0-9\s]+[a-zA-Z0-9\s]+&quot;)&#xD;&#xA;&#x9;&#x9;&#x9;Dim matchSignName As Match = regexSignName.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;If matchSignName.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchSignName.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sign_name = matchSignName.Value&#xD;&#xA;&#x9;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Signatory 1 NRIC&#xD;&#xA;&#x9;If strRow.Contains(&quot;Signatory 1 NRIC&quot;) Then &#xD;&#xA;&#x9;&#x9;Dim regexSignNRIC As Regex = New System.Text.RegularExpressions.Regex(&quot;\d{12,12}&quot;)&#xD;&#xA;&#x9;&#x9;Dim matchSignNRIC As Match = regexSignNRIC.Match(strRow)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;If matchSignNRIC.Success Then&#xD;&#xA;&#x9;&#x9;     &#x9;Console.WriteLine(&quot;RESULT: [{0}]&quot;, matchSignNRIC.Value)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;sign_nric = matchSignNRIC.Value&#xD;&#xA;&#x9;&#x9;&#x9;Else &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;sign_nric = &quot;N/A&quot;&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Signatory 1 Designation&#xD;&#xA;&#x9;If strRow.Contains(&quot;Signatory 1 Designation&quot;) Then &#xD;&#xA;&#x9;&#x9;sign_designation = LTrim(strRow.Replace(&quot;Signatory 1 Designation&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Signatory 1 Signature&#xD;&#xA;&#x9;If strRow.Contains(&quot;Signatory 1 Signature&quot;) Then &#xD;&#xA;&#x9;&#x9;sign_signature = Nothing&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Signatory 2 Name&#xD;&#xA;&#x9;If strRow.Contains(&quot;Signatory 2 Name&quot;) Then &#xD;&#xA;&#x9;&#x9;sign2_name = Nothing&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Signatory 2 NRIC&#xD;&#xA;&#x9;If strRow.Contains(&quot;Signatory 2 NRIC&quot;) Then &#xD;&#xA;&#x9;&#x9;sign2_nric = Nothing&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Signatory 2 Designation&#xD;&#xA;&#x9;If strRow.Contains(&quot;Signatory 2 Designation &quot;) Then &#xD;&#xA;&#x9;&#x9;sign2_designation = Nothing&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Signatory 2 Signature&#xD;&#xA;&#x9;If strRow.Contains(&quot;Signatory 2 Signature&quot;) Then &#xD;&#xA;&#x9;&#x9;sign2_signature = Nothing&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Constitution&#xD;&#xA;&#x9;If strRow.Contains(&quot;Constitution&quot;) Then&#xD;&#xA;&#x9;&#x9;If strRow.Contains(&quot;True&quot;)&#xD;&#xA;&#x9;&#x9;constitution = &quot;True&quot;&#xD;&#xA;&#x9;Else If strRow.Contains(&quot;False&quot;)&#xD;&#xA;&#x9;&#x9;constitution = &quot;False&quot;&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Board Declaration&#xD;&#xA;&#x9;If strRow.Contains(&quot;Board Resolution Declaration&quot;)&#xD;&#xA;&#x9;&#x9;If strRow.Contains(&quot;Yes&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;board_declaration = &quot;Yes&quot;&#xD;&#xA;&#x9;&#x9;Else If strRow.Contains(&quot;No&quot;) Then&#xD;&#xA;&#x9;&#x9;&#x9;board_declaration = &quot;No&quot;&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;End If&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;'Individual 1 NRIC&#xD;&#xA;'Dim regex As Regex = New System.Text.RegularExpressions.Regex(&quot;\d{6,6}-\d{2,2}-\d{4,4}&quot;)&#xD;&#xA;Dim result As New List(Of String) &#xD;&#xA;Dim regex As Regex = New System.Text.RegularExpressions.Regex(&quot;[a-zA-Z0-9\s\-\,\.]*&quot;)&#xD;&#xA;Dim match As System.Text.RegularExpressions.Match&#xD;&#xA;&#xD;&#xA;For Each match In regex.Matches(output2)&#xD;&#xA;&#x9;Console.WriteLine(match.Value)&#xD;&#xA;&#x9;If match.Value.Contains(&quot; &quot;) Then&#xD;&#xA;&#x9;&#x9;result.Add(match.Value)&#xD;&#xA;&#x9;End If&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;individual_nric = String.Join(&quot; &quot;, result)&#xD;&#xA;Console.WriteLine(individual_nric)&#xD;&#xA;&#xD;&#xA;'Individual 2 NRIC&#xD;&#xA;individual2_nric = Nothing&#xD;&#xA;&#xD;&#xA;" DisplayName="Invoke code Page 4" sap:VirtualizedContainerService.HintSize="496,174" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="s:String[]" x:Key="output">
+            <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="output_text_split" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="sign_name">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_sign_name" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="sign_nric">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_sign_nric" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="sign_designation">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_sign_designation" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="sign_signature">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="signatory_signature" />
+          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="output2">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_individual_nric" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="individual_nric">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_individual_nric" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="board_declaration">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_constitution" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="constitution">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_board_resolution" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="sign2_name">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_signatory2_name" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="sign2_nric">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_signatory2_nric" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="sign2_designation">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_signatory2_designation" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="individual2_nric">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_individual2_nric" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="sign2_signature">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_signatory2_signature" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="signing_condition">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="in_signing_condition" />
+          </OutArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_signing_condition,in_individual_nric,in_sign_name,in_sign_nric,in_sign_designation,signatory_signature,in_individual2_nric,in_signatory2_name,in_signatory2_nric,in_signatory2_designation,in_signatory2_signature,in_constitution,in_board_resolution}]" DataTable="[out_data_table]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="496,195" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+      <ui:WriteRange AddHeaders="True" DataTable="[out_data_table]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="496,125" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="AY1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2.xlsx" />
+      <ui:CloseApplication DisplayName="Close Application 'window  Photos'" sap:VirtualizedContainerService.HintSize="496,116" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+        <ui:CloseApplication.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="082249ba-a26c-4d93-8897-75551287521a" InformativeScreenshot="5cc927385d17e71a6e749a24b32ef4c0" Selector="&lt;wnd app='applicationframehost.exe' appid='Microsoft.Windows.Photos_8wekyb3d8bbwe!App' title='MainREF_Form2_Page4.1.1.png ‎- Photos' /&gt;&lt;uia cls='Windows.UI.Core.CoreWindow' name='Photos' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:CloseApplication.Target>
+      </ui:CloseApplication>
+    </Sequence>
+  </Sequence>
+</Activity>

@@ -1,0 +1,818 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Experiment1" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,11078" sap2010:WorkflowViewState.IdRef="Experiment1_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="40">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.PDF.Activities.PDF</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Experiment1" sap:VirtualizedContainerService.HintSize="789,11013" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="outputText" />
+      <Variable x:TypeArguments="s:String[]" Name="output_split" />
+      <Variable x:TypeArguments="x:String" Name="case_id" />
+      <Variable x:TypeArguments="x:String" Name="case_status" />
+      <Variable x:TypeArguments="x:String" Name="case_started" />
+      <Variable x:TypeArguments="x:String" Name="case_submit" />
+      <Variable x:TypeArguments="x:String" Name="flow" />
+      <Variable x:TypeArguments="x:String" Name="dropoffreason" />
+      <Variable x:TypeArguments="x:String" Name="source1" />
+      <Variable x:TypeArguments="x:String" Name="source2" />
+      <Variable x:TypeArguments="x:String" Name="ref_code" />
+      <Variable x:TypeArguments="x:String" Name="email_addr" />
+      <Variable x:TypeArguments="x:String" Name="contact_num" />
+      <Variable x:TypeArguments="x:Int32" Name="total_page" />
+      <Variable x:TypeArguments="x:Int32" Name="count" />
+      <Variable x:TypeArguments="sd:DataTable" Name="data_table" />
+      <Variable x:TypeArguments="x:String" Name="business_name" />
+      <Variable x:TypeArguments="x:String" Name="registration_number" />
+      <Variable x:TypeArguments="x:String" Name="date_of_inc" />
+      <Variable x:TypeArguments="x:String" Name="constitution" />
+      <Variable x:TypeArguments="x:String" Name="current_business_premise" />
+      <Variable x:TypeArguments="x:String" Name="country_of_inc" />
+      <Variable x:TypeArguments="x:String" Name="country_of_domicile" />
+      <Variable x:TypeArguments="x:String" Name="country_of_primary_exposure" />
+      <Variable x:TypeArguments="x:String" Name="country_of_secondary_exposure" />
+      <Variable x:TypeArguments="x:String" Name="fax" />
+      <Variable x:TypeArguments="x:String" Name="business_telephone" />
+      <Variable x:TypeArguments="x:String" Name="business_email_address" />
+      <Variable x:TypeArguments="x:String" Name="customer_disclosure" />
+      <Variable x:TypeArguments="x:String" Name="primary_contact_person_name1" />
+      <Variable x:TypeArguments="x:String" Name="contact_num1" />
+      <Variable x:TypeArguments="x:String" Name="office_no" />
+      <Variable x:TypeArguments="x:String" Name="mailing_address" />
+      <Variable x:TypeArguments="x:String" Name="business_address" />
+      <Variable x:TypeArguments="x:String" Name="registered_address" />
+      <Variable x:TypeArguments="x:String" Name="product_code" />
+      <Variable x:TypeArguments="x:String" Name="email1" />
+      <Variable x:TypeArguments="x:String" Name="signing_condition" />
+      <Variable x:TypeArguments="x:String" Name="product_name" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_page3" />
+      <Variable x:TypeArguments="x:String" Name="cif" />
+      <Variable x:TypeArguments="x:String" Name="nric_number1" />
+      <Variable x:TypeArguments="x:String" Name="date_of_birth" />
+      <Variable x:TypeArguments="x:String" Name="nationality" />
+      <Variable x:TypeArguments="x:String" Name="country_of_residence" />
+      <Variable x:TypeArguments="x:String" Name="residential_address1" />
+      <Variable x:TypeArguments="x:String" Name="race" />
+      <Variable x:TypeArguments="x:String" Name="gender" />
+      <Variable x:TypeArguments="x:String" Name="contact_number1" />
+      <Variable x:TypeArguments="x:String" Name="email_address1" />
+      <Variable x:TypeArguments="x:String" Name="main_contact_flag" />
+      <Variable x:TypeArguments="x:String" Name="beneficial_owner_declaration" />
+      <Variable x:TypeArguments="x:String" Name="occupation_designation_title" />
+      <Variable x:TypeArguments="x:String" Name="principal_name1" />
+      <Variable x:TypeArguments="x:String" Name="image_utility_bill" />
+      <Variable x:TypeArguments="x:String" Name="decision_maker" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_page4" />
+      <Variable x:TypeArguments="x:String" Name="signing_condition2" />
+      <Variable x:TypeArguments="x:String" Name="signatory1name" />
+      <Variable x:TypeArguments="x:String" Name="signatory1nric" />
+      <Variable x:TypeArguments="x:String" Name="signatory1designation" />
+      <Variable x:TypeArguments="x:String" Name="signatory2name" />
+      <Variable x:TypeArguments="x:String" Name="signatory2nric" />
+      <Variable x:TypeArguments="x:String" Name="signatory2designation" />
+      <Variable x:TypeArguments="x:String" Name="signatory2signature" />
+      <Variable x:TypeArguments="x:String" Name="individual2nric" />
+      <Variable x:TypeArguments="x:String" Name="signatory1signature" />
+      <Variable x:TypeArguments="x:String" Name="board_resolution_declaration" />
+      <Variable x:TypeArguments="x:String" Name="constitution_mn_template" />
+      <Variable x:TypeArguments="x:String" Name="individual1nric" />
+      <Variable x:TypeArguments="x:String" Name="restriction_text" />
+      <Variable x:TypeArguments="x:String" Name="constitution2" />
+      <Variable x:TypeArguments="x:String" Name="date_of_declaration" />
+      <Variable x:TypeArguments="x:String" Name="fatca_classification" />
+      <Variable x:TypeArguments="x:String" Name="crs_classification" />
+      <Variable x:TypeArguments="x:String" Name="country_of_tax_residency" />
+      <Variable x:TypeArguments="x:String" Name="active_business" />
+      <Variable x:TypeArguments="x:String" Name="duitnow_registration" />
+      <Variable x:TypeArguments="x:String" Name="preliminary_screening_date_time" />
+      <Variable x:TypeArguments="x:String" Name="preliminary_screening_hit" />
+      <Variable x:TypeArguments="x:String" Name="final_screening_date_time" />
+      <Variable x:TypeArguments="x:String" Name="final_screening_hit" />
+      <Variable x:TypeArguments="x:String" Name="watchlist_screening_date_time" />
+      <Variable x:TypeArguments="x:String" Name="watchlist_hit" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_page5" />
+      <Variable x:TypeArguments="x:String" Name="pre_requisites" />
+      <Variable x:TypeArguments="x:String" Name="watch_list" />
+      <Variable x:TypeArguments="x:String" Name="preliminary_name_screening" />
+      <Variable x:TypeArguments="x:String" Name="final_name_screening" />
+      <Variable x:TypeArguments="x:String" Name="preliminary_risk_scoring" />
+      <Variable x:TypeArguments="x:String" Name="final_risk_scoring" />
+      <Variable x:TypeArguments="x:String" Name="cif_creation" />
+      <Variable x:TypeArguments="x:String" Name="kyc_master_update" />
+      <Variable x:TypeArguments="x:String" Name="account_creation" />
+      <Variable x:TypeArguments="x:String" Name="customer_contact_update" />
+      <Variable x:TypeArguments="x:String" Name="kyc_occurrence_update" />
+      <Variable x:TypeArguments="x:String" Name="address_linking" />
+      <Variable x:TypeArguments="x:String" Name="address_create_update" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_page7" />
+      <Variable x:TypeArguments="x:String" Name="user2role" />
+      <Variable x:TypeArguments="x:String" Name="user2userid" />
+      <Variable x:TypeArguments="x:String" Name="user2email" />
+      <Variable x:TypeArguments="x:String" Name="user2name" />
+      <Variable x:TypeArguments="x:String" Name="user2mobile" />
+      <Variable x:TypeArguments="x:String" Name="user1userid" />
+      <Variable x:TypeArguments="x:String" Name="user1role" />
+      <Variable x:TypeArguments="x:String" Name="user1mobile" />
+      <Variable x:TypeArguments="x:String" Name="user1email" />
+      <Variable x:TypeArguments="x:String" Name="c2c_tag" />
+      <Variable x:TypeArguments="x:String" Name="svs_shell_creation" />
+      <Variable x:TypeArguments="x:String" Name="terms_conditions" />
+      <Variable x:TypeArguments="x:String" Name="segment" />
+      <Variable x:TypeArguments="x:String" Name="orgid" />
+      <Variable x:TypeArguments="x:String" Name="user1name" />
+      <Variable x:TypeArguments="x:String" Name="connected_parties" />
+      <Variable x:TypeArguments="x:String" Name="fatca" />
+      <Variable x:TypeArguments="x:String" Name="crs" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <upap:GetPDFPageCount DisplayName="Get PDF Page Count" FileName="C:\Users\Admin\Downloads\MainREF_Form2.pdf" sap:VirtualizedContainerService.HintSize="747,69" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" PageCount="[total_page]" />
+    <Assign sap:VirtualizedContainerService.HintSize="747,70" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">1</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[count &lt;= CINT(total_page)]" DisplayName="While" sap:VirtualizedContainerService.HintSize="747,10312" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+      <ui:InterruptibleWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="711,10137" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="669,9937" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+            <ui:IfElseIf.ConditionBlocks>
+              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                <ui:IfElseIfBlock BlockType="If" Condition="[count.Equals(1)]">
+                  <ui:IfElseIfBlock.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="442,1141" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Sequence Page 1" sap:VirtualizedContainerService.HintSize="400,1051" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="sd:DataTable" Name="dt_page1" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:BuildDataTable DataTable="[dt_page1]" DisplayName="Build Data Table Page 1" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Case_x0020_Id&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Case_x0020_Status&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020__x002F__x0020_Time_x0020_Stamp_x0020__x0028_Case_x0020_Started_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020__x002F__x0020_Time_x0020_Stamp_x0020__x0028_Case_x0020_Submitted_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Flow&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Drop-Off_x0020_Reason&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Source_x0020_1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Source_x0020_2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Reference_x0020_Code_x0020__x0028_For_x0020_Bank_x0020_use_x0020_only_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Email_x0020_Address_x0020__x0028_For_x0020_Bank_x0020_use_x0020_only_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Contact_x0020_Number_x0020__x0028_For_x0020_Bank_x0020_use_x0020_only_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                        <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text Page 1" FileName="C:\Users\Admin\Downloads\MainREF_Form2.pdf" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ReadPDFText_2" Range="[count.ToString]" Text="[outputText]" />
+                        <ui:LogMessage DisplayName="Log Message Page 1" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[outputText]" />
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_string As New List(Of String)&#xA;Dim regex As Regex = New System.Text.RegularExpressions.Regex(&quot;((?&lt;=Case Id )+(.|\n)*(?=Case Status))|((?&lt;=Case Status ).*)|((?&lt;=Date / Time Stamp \(Case )(.|\n)*(?=Started))|((?&lt;=Started\))(.|\n)*(?=Submitted))|((?&lt;=Flow )(.|\n)*(?=Drop-Off))|((?&lt;=Drop-Off Reason )(.|\n)*(?=Source 1))|((?&lt;=Source 1 )(.|\n)*(?=Source 2))|((?&lt;=Source 2 )(.|\n)*(?=Reference))|((?&lt;=Reference Code \(For Bank use).*)|((?&lt;=Email Address \(For Bank use).*)|((?&lt;=Contact Number \(For Bank use).*)&quot;)&#xA;Dim m As System.Text.RegularExpressions.Match&#xA;&#xA;For Each m In regex.Matches(output)&#xA;            list_string.Add(m.Value)&#xA;&#x9;&#x9;&#x9;Next&#xA;&#xA;case_id = list_string(0).ToString&#xA;case_status = list_string(1).ToString&#xA;case_started = list_string(2).ToString&#xA;case_submitted = list_string(3).Replace(&quot;Date / Time Stamp (Case &quot;,&quot;&quot;).ToString&#xA;flow = list_string(4).ToString&#xA;dropoffreason = list_string(5).ToString&#xA;source1 = list_string(6).ToString&#xA;source2 = list_string(7).ToString&#xA;ref_code = list_string(8).ToString&#xA;email_addr = list_string(9).ToString&#xA;contact_num = list_string(10).ToString&#xA;&#xA;Console.WriteLine(case_id)&#xA;Console.WriteLine(case_status)&#xA;Console.WriteLine(case_started)&#xA;Console.WriteLine(case_submitted)&#xA;Console.WriteLine(flow)&#xA;Console.WriteLine(dropoffreason)&#xA;Console.WriteLine(source1)&#xA;Console.WriteLine(source2)&#xA;Console.WriteLine(ref_code)&#xA;Console.WriteLine(email_addr)&#xA;Console.WriteLine(contact_num)" DisplayName="Invoke code Page 1" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+                          <ui:InvokeCode.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="output">[outputText]</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="case_id">[case_id]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="case_status">[case_status]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="case_started">[case_started]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="case_submitted ">[case_submit]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="flow">[flow]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="dropoffreason">[dropoffreason]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="source1">[source1]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="source2">[source2]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="ref_code">[ref_code]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="email_addr ">[email_addr]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="contact_num">[contact_num]</OutArgument>
+                          </ui:InvokeCode.Arguments>
+                        </ui:InvokeCode>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{case_id,case_status,case_started,case_submit,flow,dropoffreason,source1,source2,ref_code,email_addr,contact_num}]" DataTable="[dt_page1]" DisplayName="Add Data Row Page 1" sap:VirtualizedContainerService.HintSize="338,195" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                        <ui:WriteRange AddHeaders="True" DataTable="[dt_page1]" DisplayName="Write Range Page 1" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2(2).xlsx" />
+                      </Sequence>
+                    </Sequence>
+                  </ui:IfElseIfBlock.Then>
+                </ui:IfElseIfBlock>
+                <ui:IfElseIfBlock BlockType="ElseIf" Condition="[count.Equals(2)]">
+                  <ui:IfElseIfBlock.Then>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="442,1141" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Sequence Page 2" sap:VirtualizedContainerService.HintSize="400,1051" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="sd:DataTable" Name="dt_page2" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:BuildDataTable DataTable="[dt_page2]" DisplayName="Build Data Table Page 2" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Business_x0020_Name&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Registration_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020_of_x0020_Incorporation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Registered_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Business_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Mailing_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Constitution&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Current_x0020_Business_x0020_Premise_x0028_s_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Incorporation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Domicile&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Primary_x0020_Exposure&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Secondary_x0020_Exposure&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Business_x0020_Telephone&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Business_x0020_Email_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fax&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Customer_x0020_Disclosure&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Primary_x0020_Contact_x0020_Person_x0020_Name1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Contact_x0020_Number1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Office_x0020_No&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Email1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Signing_x0020_Condition&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Code&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                        <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text Page 2" FileName="C:\Users\Admin\Downloads\MainREF_Form2.pdf" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ReadPDFText_3" Range="[count.ToString]" Text="[outputText]" />
+                        <ui:LogMessage DisplayName="Log Message Page 2" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[outputText]" />
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_string As New List(Of String)&#xA;Dim regex As Regex = New System.Text.RegularExpressions.Regex(&quot;((?&lt;=Business Name )+(.|\n)*(?=Registration Number))|((?&lt;=Registration Number )+(.|\n)*(?=Date of Incorporation))|((?&lt;=Date of Incorporation )+(.|\n)*(?=Registered Address))|((?&lt;=Registration Number )+(.|\n)*(?=Date of Incorporation))|((?&lt;=Constitution )+(.|\n)*(?=Current Business Premise\(s\)))|((?&lt;=Current Business Premise\(s\) )+(.|\n)*(?=Country of Incorporation))|((?&lt;=Country of Incorporation )+(.|\n)*(?=Country of Domicile))|((?&lt;=Country of Domicile )+(.|\n)*(?=Country of Primary Exposure))|((?&lt;=Country of Primary Exposure )+(.|\n)*(?=Country of Secondary))|((?&lt;=Country of Secondary )+(.|\n)*(?=Exposure))|((?&lt;=Business Telephone )+(.|\n)*(?=Business Email Address))|((?&lt;=Business Email Address )+(.|\n)*(?=Fax))|((?&lt;=Fax )+(.|\n)*(?=Customer Disclosure))|((?&lt;=Current Business Premise\(s\) )+(.|\n)*(?=Country of Incorporation))|((?&lt;=Customer Disclosure )+(.|\n)*(?=Primary Contact Person))|((?&lt;=Primary Contact Person )+(.|\n)*(?=Name1))|((?&lt;=Contact Number1 )+(.|\n)*(?=Office))|((?&lt;=Office No )+(.|\n)*(?=Email1))|((?&lt;=Email1 )+(.|\n)*(?=Signing Condition))|((?&lt;=Signing Condition )+(.|\n)*(?=Product Name))|((?&lt;=Product Name )+(.|\n)*(?=Product Code))|(?&lt;=Product Code ).*&quot;)&#xA;Dim m As System.Text.RegularExpressions.Match&#xA;&#xA;For Each m In regex.Matches(output)&#xA;            list_string.Add(m.Value)&#xA;&#x9;&#x9;&#x9;Next&#xA;&#xA;business_name = list_string(0).ToString&#xA;registration_number = list_string(1).ToString&#xA;date_of_inc = list_string(2).ToString&#xA;constitution = list_string(3).ToString&#xA;current_business_premise = list_string(4).ToString&#xA;country_of_inc = list_string(5).ToString&#xA;country_of_domicile = list_string(6).ToString&#xA;country_of_primary_exposure = list_string(7).ToString&#xA;country_of_secondary_exposure = list_string(8).ToString&#xA;business_telephone = list_string(9).ToString&#xA;business_email_address = list_string(10).ToString&#xA;fax = list_string(11).ToString&#xA;customer_disclosure = list_string(12).ToString&#xA;primary_contact_person_name1 = list_string(13).ToString&#xA;contact_num1 = list_string(14).ToString&#xA;office_no = list_string(15).ToString&#xA;email1 = list_string(16).ToString&#xA;signing_condition = list_string(17).ToString&#xA;product_name = list_string(18).ToString&#xA;product_code = list_string(19).ToString&#xA;&#xA;Console.WriteLine(business_name)&#xA;Console.WriteLine(registration_number)&#xA;Console.WriteLine(date_of_inc)&#xA;Console.WriteLine(constitution)&#xA;Console.WriteLine(current_business_premise)&#xA;Console.WriteLine(country_of_inc)&#xA;Console.WriteLine(country_of_domicile)&#xA;Console.WriteLine(country_of_primary_exposure )&#xA;Console.WriteLine(country_of_secondary_exposure)&#xA;Console.WriteLine(business_telephone)&#xA;Console.WriteLine(business_email_address)&#xA;Console.WriteLine(fax)&#xA;Console.WriteLine(customer_disclosure)&#xA;Console.WriteLine(primary_contact_person_name1)&#xA;Console.WriteLine(contact_num1)&#xA;Console.WriteLine(office_no)&#xA;Console.WriteLine(email1)&#xA;Console.WriteLine(signing_condition)&#xA;Console.WriteLine(product_name)&#xA;Console.WriteLine(product_code)&#xA;&#xA;Dim arr_string As String() = output.Split(New String() {Environment.NewLine},StringSplitOptions.None)&#xA;Dim regex2 As Regex = New System.Text.RegularExpressions.Regex(&quot;(\d{5,5}\s)[a-zA-Z0-9\s]+(\.)?[a-zA-Z0-9\s]+&quot;)&#x9;&#xA;&#xA;'searching for the final address in array&#xA;For Each Word As String In arr_string&#xA;&#x9;If Word.Contains(&quot;Registered Address&quot;)&#xA;&#x9;&#x9;&#x9;Dim match As Match = regex2.Match(arr_string(Array.IndexOf(arr_string, Word)+1))&#xA;&#x9;&#x9;&#x9;If match.Success Then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;     Console.WriteLine(&quot;RESULT of Address: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; registered_address = arr_string(Array.IndexOf(arr_string, Word)-1).ToString + &quot; &quot; + arr_string(Array.IndexOf(arr_string, Word)).Replace(&quot;Registered Address&quot;,&quot;&quot;).ToString  + &quot; &quot; + match.Value &#xA;&#x9;&#x9;&#x9;&#x9;Else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;registered_address = &quot;N/A&quot;&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;&#x9;If Word.Contains(&quot;Business Address&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;Dim match As Match = regex2.Match(arr_string(Array.IndexOf(arr_string, Word)+1))&#xA;&#x9;&#x9;&#x9;&#x9;If match.Success Then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;     Console.WriteLine(&quot;RESULT of Address: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; business_address =  arr_string(Array.IndexOf(arr_string, Word)-1).ToString + &quot; &quot; + arr_string(Array.IndexOf(arr_string, Word)).Replace(&quot;Business Address&quot;,&quot;&quot;).ToString  + &quot; &quot; + match.Value &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;business_address = &quot;N/A&quot;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;If Word.Contains(&quot;Mailing Address&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;Dim match As Match = regex2.Match(arr_string(Array.IndexOf(arr_string, Word)+1))&#xA;&#x9;&#x9;&#x9;&#x9;If match.Success Then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;     Console.WriteLine(&quot;RESULT of Address: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; mailing_address =  arr_string(Array.IndexOf(arr_string, Word)-1).ToString + &quot; &quot; + arr_string(Array.IndexOf(arr_string, Word)).Replace(&quot;Mailing Address&quot;,&quot;&quot;).ToString  + &quot; &quot; + match.Value &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;mailing_address = &quot;N/A&quot;&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;Next&#xA;&#xA;Console.WriteLine(&quot;Registered Address: &quot; + registered_address)&#xA;Console.WriteLine(&quot;Business Address: &quot; + business_address)&#xA;Console.WriteLine(&quot;Mailing Address: &quot; + mailing_address)&#xA;" DisplayName="Invoke code Page 2" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
+                          <ui:InvokeCode.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="output">[outputText]</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="business_name">[business_name]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="case_status">[case_status]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="registration_number">[registration_number]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="date_of_inc">[date_of_inc]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="constitution">[constitution]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="current_business_premise">[current_business_premise]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="country_of_inc">[country_of_inc]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="country_of_domicile">[country_of_domicile]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="country_of_primary_exposure">[country_of_primary_exposure]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="country_of_secondary_exposure">[country_of_secondary_exposure]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="business_telephone">[business_telephone]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="business_email_address">[business_email_address]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="fax">[fax]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="customer_disclosure">[customer_disclosure]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="primary_contact_person_name1">[primary_contact_person_name1]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="contact_num1">[contact_num1]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="office_no">[office_no]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="email1">[email1]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="signing_condition">[signing_condition]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="product_name">[product_name]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="product_code">[product_code]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="registered_address">[registered_address]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="business_address">[business_address]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="mailing_address">[mailing_address]</OutArgument>
+                          </ui:InvokeCode.Arguments>
+                        </ui:InvokeCode>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{business_name,registration_number,date_of_inc,registered_address,business_address,mailing_address,constitution,current_business_premise,country_of_inc,country_of_inc,country_of_domicile,country_of_primary_exposure,country_of_secondary_exposure,business_telephone,business_email_address,customer_disclosure,primary_contact_person_name1,contact_num1,office_no,email1,signing_condition,product_name,product_code}]" DataTable="[dt_page2]" DisplayName="Add Data Row Page 2" sap:VirtualizedContainerService.HintSize="338,195" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                        <ui:WriteRange AddHeaders="True" DataTable="[dt_page2]" DisplayName="Write Range Page 2" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Sheet1" StartingCell="L1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2(2).xlsx" />
+                      </Sequence>
+                    </Sequence>
+                  </ui:IfElseIfBlock.Then>
+                </ui:IfElseIfBlock>
+                <ui:IfElseIfBlock BlockType="ElseIf" Condition="[count.Equals(3)]">
+                  <ui:IfElseIfBlock.Then>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="442,1141" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Sequence Page 3" sap:VirtualizedContainerService.HintSize="400,1051" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:BuildDataTable DataTable="[dt_page3]" DisplayName="Build Data Table Page 3" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_5" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;CIF&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NRIC_x0020_Number1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Principal_x0020_Name1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020_of_x0020_Birth&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Nationality&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Residence&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Residential_x0020_Address1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Race&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Gender&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Contact_x0020_Number1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Email_x0020_Address1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Main_x0020_Contact_x0020_Flag&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Beneficial_x0020_owner_x0020_declaration_x0020_flag&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Occupation_x002F_Designation_x002F_Title&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Other_x002F_Additional_x0020_ultimate_x0020_owner_x0020_and_x0020_decision_x0020_maker&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Image_x0020_of_x0020_utility_x0020_bill&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                        <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text Page 3" FileName="C:\Users\Admin\Downloads\MainREF_Form2.pdf" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ReadPDFText_5" Range="[count.ToString]" Text="[outputText]" />
+                        <ui:LogMessage DisplayName="Log Message Page 3" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[outputText]" />
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_string As New List(Of String)&#xA;Dim regex As Regex = New System.Text.RegularExpressions.Regex(&quot;((?&lt;=CIF )+(.|\n)*(?=NRIC Number1))|((?&lt;=NRIC Number1 )+(.|\n)*(?=Principal Name1))|((?&lt;=Principal Name1 )+(.|\n)*(?=Date of Birth))|((?&lt;=Date of Birth )+(.|\n)*(?=Nationality))|((?&lt;=Nationality )+(.|\n)*(?=Country of Residence))|(?&lt;=Country of Residence ).*|(?&lt;=Race ).*|((?&lt;=Gender )+(.|\n)*(?=Contact Number1))|((?&lt;=Contact Number1 )+(.|\n)*(?=Email Address1))|((?&lt;=Email Address1 )+(.|\n)*(?=Main Contact Flag))|((?&lt;=Main Contact Flag )+(.|\n)*(?=Beneficial owner declaration))|((?&lt;=Beneficial owner declaration ).*)|((?&lt;=Occupation/ Designation/ ).*)|((?&lt;=Other/Additional ultimate ).*)|((?&lt;=Image of utility bill)(.|\n)*(?=AUTHORISED))&quot;)&#xA;Dim m As System.Text.RegularExpressions.Match&#xA;&#xA;For Each m In regex.Matches(output)&#xA;            list_string.Add(m.Value)&#xA;&#x9;&#x9;&#x9;Next&#xA;&#xA;cif = list_string(0).ToString&#xA;nric_number1 = list_string(1).ToString&#xA;principal_name1 = list_string(2).ToString&#xA;date_of_birth = list_string(3).ToString&#xA;nationality = list_string(4).ToString&#xA;country_of_residence = list_string(5).ToString&#xA;race = list_string(6).ToString&#xA;gender = list_string(7).ToString&#xA;contact_number1 = list_string(8).ToString&#xA;email_address1 = list_string(9).ToString&#xA;main_contact_flag = list_string(10).ToString&#xA;beneficial_owner_declaration = list_string(11).ToString&#xA;occupation_designation_title = list_string(12).ToString&#xA;decision_maker = list_string(13).ToString&#xA;image_utility_bill = list_string(14).ToString&#xA;&#xA;Console.WriteLine(cif)&#xA;Console.WriteLine(nric_number1)&#xA;Console.WriteLine(principal_name1)&#xA;Console.WriteLine(date_of_birth)&#xA;Console.WriteLine(nationality)&#xA;Console.WriteLine(country_of_residence)&#xA;Console.WriteLine(race)&#xA;Console.WriteLine(gender )&#xA;Console.WriteLine(contact_number1)&#xA;Console.WriteLine(email_address1)&#xA;Console.WriteLine(main_contact_flag)&#xA;Console.WriteLine(beneficial_owner_declaration)&#xA;Console.WriteLine(occupation_designation_title)&#xA;Console.WriteLine(image_utility_bill )&#xA;&#xA;Dim arr_string As String() = output.Split(New String() {Environment.NewLine},StringSplitOptions.None)&#xA;Dim regex2 As Regex = New System.Text.RegularExpressions.Regex(&quot;(\d{5,5}\s)[a-zA-Z0-9\s]+(\.)?[a-zA-Z0-9\s]+&quot;)&#x9;&#xA;&#xA;'searching for the final address in array&#xA;For Each Word As String In arr_string&#xA;&#x9;If Word.Contains(&quot;Residential Address1&quot;)&#xA;&#x9;&#x9;&#x9;Dim match As Match = regex2.Match(arr_string(Array.IndexOf(arr_string, Word)+1))&#xA;&#x9;&#x9;&#x9;If match.Success Then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;     Console.WriteLine(&quot;RESULT of Address: [{0}]&quot;, match.Value)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; residential_address1 = arr_string(Array.IndexOf(arr_string, Word)-1).ToString + &quot; &quot; + arr_string(Array.IndexOf(arr_string, Word)).Replace(&quot;Registered Address&quot;,&quot;&quot;).ToString  + &quot; &quot; + match.Value &#xA;&#x9;&#x9;&#x9;&#x9;Else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;residential_address1 = &quot;N/A&quot;&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;&#x9;End If&#xA;&#x9;Next&#xA;&#xA;Console.WriteLine(&quot;Residential Address: &quot; + residential_address1)" DisplayName="Invoke code Page 3" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
+                          <ui:InvokeCode.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="output">[outputText]</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="cif">[cif]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="nric_number1">[nric_number1]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="date_of_birth">[date_of_birth]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="nationality">[nationality]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="country_of_residence">[country_of_residence]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="residential_address1">[residential_address1]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="race">[race]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="gender">[gender]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="contact_number1">[contact_number1]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="email_address1">[email_address1]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="main_contact_flag">[main_contact_flag]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="beneficial_owner_declaration">[beneficial_owner_declaration]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="occupation_designation_title">[occupation_designation_title]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="decision_maker">[decision_maker]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="image_utility_bill">[image_utility_bill]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="principal_name1">[principal_name1]</OutArgument>
+                          </ui:InvokeCode.Arguments>
+                        </ui:InvokeCode>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{cif,nric_number1,principal_name1,date_of_birth,nationality,country_of_residence,residential_address1,race,gender,contact_number1,email_address1,main_contact_flag,beneficial_owner_declaration,occupation_designation_title,decision_maker,image_utility_bill}]" DataTable="[dt_page3]" DisplayName="Add Data Row Page 3" sap:VirtualizedContainerService.HintSize="338,195" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+                        <ui:WriteRange AddHeaders="True" DataTable="[dt_page3]" DisplayName="Write Range Page 3" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="Sheet1" StartingCell="AI1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2(2).xlsx" />
+                      </Sequence>
+                    </Sequence>
+                  </ui:IfElseIfBlock.Then>
+                </ui:IfElseIfBlock>
+                <ui:IfElseIfBlock BlockType="ElseIf" Condition="[count.Equals(4)]">
+                  <ui:IfElseIfBlock.Then>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="600,2167" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Sequence Page 4" sap:VirtualizedContainerService.HintSize="558,2077" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:BuildDataTable DataTable="[dt_page4]" DisplayName="Build Data Table Page 4" sap:VirtualizedContainerService.HintSize="496,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_7" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Signing_x0020_Condition&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Individual_x0020_1_x0020_NRIC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_1_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_1_x0020_NRIC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_1_x0020_Designation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_1_x0020_Signature&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Individual_x0020_2_x0020_NRIC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_2_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_2_x0020_NRIC&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_2_x0020_Designation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Signatory_x0020_2_x0020_Signature&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Constitution_x002F_M_x0026_A_x0020_Template_x0020_Declaration_x0020_Flag&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Board_x0020_Resolution_x0020_Declaration_x0020_Flag&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                        <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text Page 4" FileName="C:\Users\Admin\Downloads\MainREF_Form2.pdf" sap:VirtualizedContainerService.HintSize="496,69" sap2010:WorkflowViewState.IdRef="ReadPDFText_6" Range="[count.ToString]" Text="[outputText]" />
+                        <ui:LogMessage DisplayName="Log Message Page 4" sap:VirtualizedContainerService.HintSize="496,97" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[outputText]" />
+                        <upap:ExtractImagesFromPDF DisplayName="Extract Images From PDF" FileName="Split_PDF\MainREF_Form2_Page4.pdf" sap:VirtualizedContainerService.HintSize="496,69" sap2010:WorkflowViewState.IdRef="ExtractImagesFromPDF_1" OutputFolderName="C:\Users\Admin\Downloads\MainREFolder" />
+                        <ui:InvokePowerShell x:TypeArguments="sma:PSObject" ContinueOnError="{x:Null}" CommandText="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2_Page4.1.1.png" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="496,69" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_1">
+                          <ui:InvokePowerShell.PowerShellVariables>
+                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                          </ui:InvokePowerShell.PowerShellVariables>
+                        </ui:InvokePowerShell>
+                        <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="496,556" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="ui:GenericValue" Name="CustomDdimagecontrol" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'MainREF_F Applicati'" sap:VirtualizedContainerService.HintSize="434,434" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="d2d367de6917e781e975f77b0079464b" Selector="&lt;wnd app='applicationframehost.exe' appid='Microsoft.Windows.Photos_8wekyb3d8bbwe!App' title='MainREF_Form2_Page4.1.1.png ‎- Photos' /&gt;">
+                            <ui:WindowScope.Body>
+                              <ActivityAction x:TypeArguments="x:Object">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,278" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Get OCR Text 'custom  D2DImageControl'" sap:VirtualizedContainerService.HintSize="358,188" sap2010:WorkflowViewState.IdRef="GetOCRText_1">
+                                    <ui:GetOCRText.OCREngine>
+                                      <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                                        <ActivityFunc.Argument>
+                                          <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                                        </ActivityFunc.Argument>
+                                        <p:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" UseLocalServer="{x:Null}" ApiKey="ThkGuaenjIjZpulfQPlZD5ZizfwGi58MQ38rQuD5s18zNsOWAv+s/Q0p9Yoh1BH/zq4xnTKajr9aj9Cs4vF//g==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,32" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Image="[Image]" Language="auto" Profile="None" Scale="1" Text="[individual1nric]" Timeout="100000" />
+                                      </ActivityFunc>
+                                    </ui:GetOCRText.OCREngine>
+                                    <ui:GetOCRText.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f49dd780-2a48-437f-9ccd-898f193f3809" InformativeScreenshot="31f5d3c906cbf44a3aa2698694698f79" Selector="&lt;uia automationid='D2DImageControl' role='custom' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:GetOCRText.Target>
+                                    <ui:GetOCRText.Text>
+                                      <OutArgument x:TypeArguments="x:String">[individual1nric]</OutArgument>
+                                    </ui:GetOCRText.Text>
+                                  </ui:GetOCRText>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:WindowScope.Body>
+                          </ui:WindowScope>
+                        </Sequence>
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="496,172" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                          <ui:MultipleAssign.AssignOperations>
+                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[signatory1signature]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[individual2nric]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[signatory2signature]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                            </scg:List>
+                          </ui:MultipleAssign.AssignOperations>
+                        </ui:MultipleAssign>
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_string As New List(Of String)&#xA;Dim regex As Regex = New System.Text.RegularExpressions.Regex(&quot;(((?&lt;=Signing Condition )+(.|\n)*(?=Individual 1 NRIC))|((?&lt;=Signatory 1 Name )+(.|\n)*(?=Signatory 1 NRIC))|((?&lt;=Signatory 1 NRIC )+(.|\n)*(?=Signatory 1 Designation))|((?&lt;=Signatory 1 Designation )+(.|\n)*(?=Signatory 1 Signature))|((?&lt;=Signatory 2 Name)+(.|\n)*(?=Signatory 2 NRIC))|((?&lt;=Signatory 2 NRIC)+(.|\n)*(?=Signatory 2 Designation))|((?&lt;=Signatory 2 Designation)+(.|\n)*(?=Signatory 2 Signature))|((?&lt;=Constitution/M&amp;A Template )(.|\n)*(?=Declaration Flag))|((?&lt;=Board Resolution Declaration )(.|\n)*(?=Flag)))&quot;)&#xA;Dim m As System.Text.RegularExpressions.Match&#xA;&#xA;For Each m In regex.Matches(output)&#xA;            list_string.Add(m.Value)&#xA;&#x9;&#x9;&#x9;Next&#xA;&#xA;signing_condition = list_string(0).ToString&#xA;signatory1name = list_string(1).ToString&#xA;signatory1nric = list_string(2).ToString&#xA;signatory1designation = list_string(3).ToString&#xA;signatory2name = list_string(4).ToString&#xA;signatory2nric = list_string(5).ToString&#xA;signatory2designation = list_string(6).ToString&#xA;constitution_mna_template = list_string(7).ToString &#xA;board_resolution_declaration = list_string(8).ToString&#xA;&#xA;'Individual 1 NRIC&#xA;'Dim regex As Regex = New System.Text.RegularExpressions.Regex(&quot;\d{6,6}-\d{2,2}-\d{4,4}&quot;)&#xA;Dim result As New List(Of String) &#xA;Dim regexNRIC As Regex = New System.Text.RegularExpressions.Regex(&quot;[a-zA-Z0-9\s\-\,\.]*&quot;)&#xA;Dim match As System.Text.RegularExpressions.Match&#xA;&#xA;For Each match In regexNRIC.Matches(output2)&#xA;&#x9;Console.WriteLine(match.Value)&#xA;&#x9;If match.Value.Contains(&quot; &quot;) Then&#xA;&#x9;&#x9;result.Add(match.Value)&#xA;&#x9;End If&#xA;Next&#xA;&#xA;individual_nric = String.Join(&quot; &quot;, result)&#xA;Console.WriteLine(individual_nric)" DisplayName="Invoke code Page 4" sap:VirtualizedContainerService.HintSize="496,174" sap2010:WorkflowViewState.IdRef="InvokeCode_6">
+                          <ui:InvokeCode.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="output">[outputText]</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="signing_condition">[signing_condition2]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="signatory1name">[signatory1name]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="signatory1nric">[signatory1nric]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="signatory1designation">[signatory1designation]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="signatory2name">[signatory2name]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="signatory2nric">[signatory2nric]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="signatory2designation">[signatory2designation]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="constitution_mna_template">[constitution_mn_template]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="board_resolution_declaration">[board_resolution_declaration]</OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="output2">[individual1nric]</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="individual_nric">[individual1nric]</OutArgument>
+                          </ui:InvokeCode.Arguments>
+                        </ui:InvokeCode>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{signing_condition2,individual1nric,signatory1name,signatory1nric,signatory1designation,signatory1signature,signatory2name,signatory2nric,signatory2designation,signatory2signature,constitution_mn_template,board_resolution_declaration}]" DataTable="[dt_page4]" DisplayName="Add Data Row Page 4" sap:VirtualizedContainerService.HintSize="496,195" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                        <ui:WriteRange AddHeaders="True" DataTable="[dt_page4]" DisplayName="Write Range Page 4" sap:VirtualizedContainerService.HintSize="496,125" sap2010:WorkflowViewState.IdRef="WriteRange_5" SheetName="Sheet1" StartingCell="AY1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2(2).xlsx" />
+                      </Sequence>
+                    </Sequence>
+                  </ui:IfElseIfBlock.Then>
+                </ui:IfElseIfBlock>
+                <ui:IfElseIfBlock BlockType="ElseIf" Condition="[count.Equals(5)]">
+                  <ui:IfElseIfBlock.Then>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="442,1141" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Sequence Page 5" sap:VirtualizedContainerService.HintSize="400,1051" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:BuildDataTable DataTable="[dt_page5]" DisplayName="Build Data Table Page 5" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_9" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Restriction_x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Constitution&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020_of_x0020_Declaration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;FATCA_x0020_Classification&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CRS_x0020_Classification&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country_x0020_of_x0020_Tax_x0020_Residency&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Active_x0020_Business&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DuitNow_x0020_Registration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Preliminary_x0020_Screening_x0020_Date_x0020_Time_x0020_Stamp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Preliminary_x0020_Screening_x0020_Hit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Final_x0020_Screening_x0020_Date_x0020_Time_x0020_Stamp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Final_x0020_Screening_x0020_Hit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Watchlist_x0020_Screening_x0020_Date_x0020_Time_x0020_Stamp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Watchlist_x0020_Hit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                        <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text Page 5" FileName="C:\Users\Admin\Downloads\MainREF_Form2.pdf" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ReadPDFText_8" Range="[count.ToString]" Text="[outputText]" />
+                        <ui:LogMessage DisplayName="Log Message Page 5" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[outputText]" />
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_string As New List(Of String)&#xA;Dim regex As Regex = New System.Text.RegularExpressions.Regex(&quot;(((?=.CASE)(.|\n)*(?=FATCA/CRS))|((?&lt;=Constitution )+(.|\n)*(?=Date of Declaration))|((?&lt;=Date of Declaration )+(.|\n)*(?=FATCA Classification))|((?&lt;=FATCA Classification )+(.|\n)*(?=CRS Classification))|((?&lt;=CRS Classification )+(.|\n)*(?=Country of Tax Residency))|((?&lt;=Country of Tax Residency )+(.|\n)*(?=Active Business))|(?&lt;=Active Business ).*|(?&lt;=DuitNow Registration ).*|((?&lt;=Preliminary Screening Date )+(.|\n)*(?=Time Stamp))|((?&lt;=Preliminary Screening Hit )+(.|\n)*(?=Final Screening Date Time))|((?&lt;=Final Screening Date Time ).*)|((?&lt;=Final Screening Hit ).*)|((?&lt;=Watchlist Screening Date Time ).*)|((?&lt;=Watchlist Hit ).*))&quot;)&#xA;Dim m As System.Text.RegularExpressions.Match&#xA;&#xA;For Each m In regex.Matches(output)&#xA;            list_string.Add(m.Value)&#xA;&#x9;&#x9;&#x9;Next&#xA;&#xA;restriction_text = list_string(0).ToString&#xA;constitution = list_string(1).ToString&#xA;date_of_declaration = list_string(2).ToString&#xA;fatca_classification = list_string(3).ToString&#xA;crs_classification = list_string(4).ToString&#xA;country_of_tax_residency = list_string(5).ToString&#xA;active_business = list_string(6).ToString&#xA;duitnow_registration = list_string(7).ToString&#xA;preliminary_screening_date_time = list_string(8).ToString&#xA;preliminary_screening_hit = list_string(9).ToString&#xA;final_screening_date_time = list_string(10).ToString&#xA;final_screening_hit = list_string(11).ToString&#xA;watchlist_screening_date_time = list_string(12).ToString&#xA;watchlist_hit = list_string(13).ToString&#xA;&#xA;Console.WriteLine(restriction_text)&#xA;Console.WriteLine(constitution)&#xA;Console.WriteLine(date_of_declaration)&#xA;Console.WriteLine(fatca_classification)&#xA;Console.WriteLine(crs_classification)&#xA;Console.WriteLine(country_of_tax_residency)&#xA;Console.WriteLine(active_business)&#xA;Console.WriteLine(duitnow_registration)&#xA;Console.WriteLine(preliminary_screening_date_time)&#xA;Console.WriteLine(preliminary_screening_hit)&#xA;Console.WriteLine(final_screening_date_time)&#xA;Console.WriteLine(final_screening_hit)&#xA;Console.WriteLine(watchlist_screening_date_time)&#xA;Console.WriteLine(watchlist_hit)" DisplayName="Invoke code Page 5" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
+                          <ui:InvokeCode.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="output">[outputText]</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="restriction_text">[restriction_text]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="constitution">[constitution2]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="date_of_declaration">[date_of_declaration]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="fatca_classification">[fatca_classification]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="crs_classification">[crs_classification]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="country_of_tax_residency">[country_of_tax_residency]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="active_business">[active_business]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="duitnow_registration">[duitnow_registration]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="preliminary_screening_date_time">[preliminary_screening_date_time]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="preliminary_screening_hit">[preliminary_screening_hit]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="final_screening_date_time">[final_screening_date_time]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="final_screening_hit">[final_screening_hit]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="watchlist_screening_date_time">[watchlist_screening_date_time]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="watchlist_hit">[watchlist_hit]</OutArgument>
+                          </ui:InvokeCode.Arguments>
+                        </ui:InvokeCode>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{restriction_text,constitution2,date_of_declaration,fatca_classification,crs_classification,country_of_tax_residency,active_business,duitnow_registration,preliminary_screening_date_time,preliminary_screening_hit,final_screening_date_time,final_screening_hit,watchlist_screening_date_time,watchlist_hit}]" DataTable="[dt_page5]" DisplayName="Add Data Row Page 5" sap:VirtualizedContainerService.HintSize="338,195" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+                        <ui:WriteRange AddHeaders="True" DataTable="[dt_page5]" DisplayName="Write Range Page 5" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteRange_6" SheetName="Sheet1" StartingCell="BL1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2(2).xlsx" />
+                      </Sequence>
+                    </Sequence>
+                  </ui:IfElseIfBlock.Then>
+                </ui:IfElseIfBlock>
+                <ui:IfElseIfBlock BlockType="ElseIf" Condition="[count.Equals(6)]">
+                  <ui:IfElseIfBlock.Then>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="442,1141" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Sequence Page 6" sap:VirtualizedContainerService.HintSize="400,1051" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="sd:DataTable" Name="dt_page6" />
+                          <Variable x:TypeArguments="x:String" Name="suppliers_5" />
+                          <Variable x:TypeArguments="x:String" Name="customers_5" />
+                          <Variable x:TypeArguments="x:String" Name="business_mainly_operates" />
+                          <Variable x:TypeArguments="x:String" Name="majority_sales_originate" />
+                          <Variable x:TypeArguments="x:String" Name="beneficial_owner_declaration2" />
+                          <Variable x:TypeArguments="x:String" Name="crimea" />
+                          <Variable x:TypeArguments="x:String" Name="high_risk_business" />
+                          <Variable x:TypeArguments="x:String" Name="beneficial_owner" />
+                          <Variable x:TypeArguments="x:String" Name="account_num" />
+                          <Variable x:TypeArguments="x:String" Name="date_account_open" />
+                          <Variable x:TypeArguments="x:String" Name="permanent_employee" />
+                          <Variable x:TypeArguments="x:String" Name="initial_deposit" />
+                          <Variable x:TypeArguments="x:String" Name="business_type" />
+                          <Variable x:TypeArguments="x:String" Name="purpose_account" />
+                          <Variable x:TypeArguments="x:String" Name="risk_score_decision" />
+                          <Variable x:TypeArguments="x:String" Name="risk_score_number" />
+                          <Variable x:TypeArguments="x:String" Name="risk_scoring_date_time" />
+                          <Variable x:TypeArguments="x:String" Name="transaction_amount" />
+                          <Variable x:TypeArguments="x:String" Name="transaction_num" />
+                          <Variable x:TypeArguments="x:String" Name="initial_deposit2" />
+                          <Variable x:TypeArguments="x:String" Name="purpose_account2" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:BuildDataTable DataTable="[dt_page6]" DisplayName="Build Data Table Page 6" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_11" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Risk_x0020_Scoring_x0020_Date_x0020_Time_x0020_Stamp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Risk_x0020_Score_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Risk_x0020_Score_x0020_Decision&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Tell_x0020_us_x0020_more_x0020_about_x0020_your_x0020_business&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Other_x0020_High_x0020_Risk_x0020_Business_x0020_Declaration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Initial_x0020_Deposit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Initial_x0020_Deposit_x0020__x0028_Others_x0029__x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Business_x0020_Mainly_x0020_Operates_x0020_In_x0020__x0028_Country_x0020_of_x0020_Domicile_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Beneficial_x0020_Owner_x0020_Declaration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Other_x0020_Beneficial_x0020_Owner&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Purpose_x0020_of_x0020_Account&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Purpose_x0020_of_x0020_Account_x0020__x0028_Other_x0029__x0020_Text&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Permanent_x0020_Employees&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;_x0035__x0020_Names_x0020_and_x0020_Locations_x0020_of_x0020_Current_x0020_or_x0020_Expected_x0020_Customers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;_x0035__x0020_Names_x0020_and_x0020_Locations_x0020_of_x0020_Current_x0020_or_x0020_Expected_x0020_Suppliers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Majority_x0020_of_x0020_the_x0020_Sales_x0020_Originate_x0020_from&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Ukraine_x002F_Russia_x0020_-_x0020_Crimea&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Expected_x0020_Number_x0020_of_x0020_Transactions_x0020_per_x0020_Month&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Expected_x0020_Transaction_x0020_Amount_x0020_per_x0020_Month&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Account_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Dater_x0020_Account_x0020_Opened&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+                        <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text Page 6" FileName="C:\Users\Admin\Downloads\MainREF_Form2.pdf" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ReadPDFText_9" Range="[count.ToString]" Text="[outputText]" />
+                        <ui:LogMessage DisplayName="Log Message Page 6" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[outputText]" />
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_customer As New List(Of String)&#xD;&#xA;Dim list_supplier As New List(Of String)&#xD;&#xA;Dim list_country As New List(Of String)&#xD;&#xA;Dim list_yes_no As New List(Of String)&#xD;&#xA;Dim list_transaction_num As New List(Of String)&#xD;&#xA;&#xD;&#xA;Dim output As String() = outputOld.Split(New String() {Environment.NewLine},StringSplitOptions.None)&#xD;&#xA;&#xD;&#xA;For Each strRow As String In output &#xD;&#xA;&#x9;Dim regexExpectedCustomer As Regex = New System.Text.RegularExpressions.Regex(&quot;Customer\s[A-Z]\s\([A-Z]{3,}\)&quot;)&#xD;&#xA;&#x9;Dim matchExpectedCustomer As Match = regexExpectedCustomer.Match(strRow)&#xD;&#xA;&#x9;Dim regexExpectedSupplier As Regex = New System.Text.RegularExpressions.Regex(&quot;Supplier\s[A-Z]\s\([A-Z]{3,}\)&quot;)&#xD;&#xA;&#x9;Dim matchExpectedSupplier As Match = regexExpectedSupplier.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchExpectedCustomer.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchExpectedCustomer.Value)&#xD;&#xA;&#x9;&#x9;list_customer.Add(matchExpectedCustomer.Value)&#xD;&#xA;&#x9;Else If matchExpectedSupplier.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchExpectedSupplier.Value)&#xD;&#xA;&#x9;&#x9;list_supplier.Add(matchExpectedSupplier.Value)&#xD;&#xA;&#x9;End If&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;customer = String.Join(&quot; &quot;,list_customer)&#xD;&#xA;supplier = String.Join(&quot; &quot;,list_supplier)&#xD;&#xA;&#xD;&#xA;For Each strRow As String In output &#xD;&#xA;&#x9;Dim regexCountry As Regex = New System.Text.RegularExpressions.Regex(&quot;MALAYSIA|SINGAPORE&quot;)&#xD;&#xA;&#x9;Dim matchCountry As Match = regexCountry.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchCountry.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchCountry.Value)&#xD;&#xA;&#x9;&#x9;list_country.Add(matchCountry.Value)&#xD;&#xA;&#x9;End If&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;mainly_operates = list_country(0)&#xD;&#xA;majority_sales_originate = list_country(list_country.count-1).ToString  &#xD;&#xA;&#xD;&#xA;For Each strRow As String In output &#xD;&#xA;&#x9;Dim regexOwnerDeclaration As Regex = New System.Text.RegularExpressions.Regex(&quot;\d{5,}&quot;)&#xD;&#xA;&#x9;Dim matchOwnerDeclaration As Match = regexOwnerDeclaration.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchOwnerDeclaration.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchOwnerDeclaration.Value)&#xD;&#xA;&#x9;&#x9;beneficial_owner_declaration = matchOwnerDeclaration.Value&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;&#xD;&#xA;For Each strRow As String In output &#xD;&#xA;&#x9;Dim regexYesNo As Regex = New System.Text.RegularExpressions.Regex(&quot;No|Yes&quot;)&#xD;&#xA;&#x9;Dim matchYesNo As Match = regexYesNo.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchYesNo.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchYesNo.Value)&#xD;&#xA;&#x9;&#x9;list_yes_no.Add(matchYesNo.Value)&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;&#xD;&#xA;high_risk_business = list_yes_no(0)&#xD;&#xA;beneficial_owner = list_yes_no(1)&#xD;&#xA;crimea = list_yes_no(2)&#xD;&#xA;&#xD;&#xA;For Each strRow As String In output &#xD;&#xA;&#x9;If strRow.Contains(&quot;Account Number&quot;) Then&#xD;&#xA;&#x9;&#x9;account_num = LTrim(strRow.Replace(&quot;Account Number&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If strRow.Contains(&quot;Date Account Opened&quot;) Then&#xD;&#xA;&#x9;&#x9;date_account_open = LTrim(strRow.Replace(&quot;Date Account Opened&quot;,&quot;&quot;))&#xD;&#xA;&#x9;End If&#xD;&#xA;&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;For Each strRow As String In output&#xD;&#xA;&#x9;Dim regexTransactionAmount As Regex = New System.Text.RegularExpressions.Regex(&quot;(?=RM).*&quot;)&#xD;&#xA;&#x9;Dim matchTransactionAmount As Match = regexTransactionAmount.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchTransactionAmount.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT transaction amount: [{0}]&quot;, matchTransactionAmount.Value)&#xD;&#xA;&#x9;&#x9;transaction_amount = matchTransactionAmount.Value&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;&#xD;&#xA;'removing all variables, leaving only the value&#xD;&#xA;Dim regexRemoveText As Regex = New System.Text.RegularExpressions.Regex(&quot;(?=Risk Scoring)(.|\n)*(?&lt;=per Month)&quot;,RegexOptions.Multiline)&#xD;&#xA;Dim matchRemoveText As Match = regexRemoveText.Match(outputOld)&#xD;&#xA;&#xD;&#xA;If matchRemoveText.Success Then&#xD;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;RESULT of output: [{0}]&quot;, matchRemoveText.Value)&#xD;&#xA;&#x9;&#x9;&#x9;outputOld = outputOld.Replace(matchRemoveText.value,&quot;&quot;)&#xD;&#xA;&#x9;End If&#xD;&#xA;&#xD;&#xA;Dim array_output As String() = outputOld.Split(New String() {Environment.NewLine},StringSplitOptions.None)&#xD;&#xA;&#x9; &#xD;&#xA;risk_scoring_date_time = array_output(0).ToString &#xD;&#xA;risk_score_number = array_output(1).ToString&#xD;&#xA;risk_score_decision = array_output(2).ToString &#xD;&#xA;&#xD;&#xA;For Each strArray As String In array_output&#xD;&#xA;&#x9;Console.WriteLine(strArray)&#xD;&#xA;&#x9;Next&#xD;&#xA;&#xD;&#xA;For Each strArray As String In array_output &#xD;&#xA;&#x9;If strArray.Contains(&quot;trading&quot;) Then &#xD;&#xA;&#x9;&#x9;business_type = strArray.ToString&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If strArray.Contains(&quot;Business Revenue&quot;) Then&#xD;&#xA;&#x9;&#x9;initial_deposit = strArray.ToString &#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If strArray.Contains(&quot;Business Operations&quot;) Then&#xD;&#xA;&#x9;&#x9;purpose_account = strArray.ToString&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;For Each strRow As String In array_output&#xD;&#xA;&#x9;Dim regexTransactionNum As Regex = New System.Text.RegularExpressions.Regex(&quot;(?=\d).*&quot;)&#xD;&#xA;&#x9;Dim matchTransactionNum As Match = regexTransactionNum.Match(strRow)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If matchTransactionNum.Success Then&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of transaction num: [{0}]&quot;, matchTransactionNum.Value)&#xD;&#xA;&#x9;&#x9;&#x9;list_transaction_num.Add(matchTransactionNum.Value)&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;Next&#xD;&#xA;&#x9;&#xD;&#xA;permanent_employee = list_transaction_num(1).ToString&#xD;&#xA;transaction_num = list_transaction_num(2).ToString&#xD;&#xA;initial_deposit2 = Nothing &#xD;&#xA;purpose_account2 = Nothing" DisplayName="Invoke code Page 6" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_10">
+                          <ui:InvokeCode.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="outputOld">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="outputText" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="supplier">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="suppliers_5" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="customer">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="customers_5" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="mainly_operates">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="business_mainly_operates" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="majority_sales_originate">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="majority_sales_originate" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="beneficial_owner_declaration">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="beneficial_owner_declaration2" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="crimea">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="crimea" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="high_risk_business">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="high_risk_business" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="beneficial_owner">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="beneficial_owner" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="account_num">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="account_num" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="date_account_open">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="date_account_open" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="transaction_num">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="transaction_num" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="transaction_amount">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="transaction_amount" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="risk_scoring_date_time">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="risk_scoring_date_time" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="risk_score_number">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="risk_score_number" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="risk_score_decision">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="risk_score_decision" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="business_type">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="business_type" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="purpose_account">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="purpose_account" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="initial_deposit">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="initial_deposit" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="permanent_employee">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="permanent_employee" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="initial_deposit2">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="initial_deposit2" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="purpose_account2">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="purpose_account2" />
+                            </OutArgument>
+                          </ui:InvokeCode.Arguments>
+                        </ui:InvokeCode>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{risk_scoring_date_time,risk_score_number,risk_score_decision,business_type,high_risk_business,initial_deposit,initial_deposit2,business_mainly_operates,beneficial_owner_declaration2,beneficial_owner,purpose_account,purpose_account2,permanent_employee,customers_5,suppliers_5,majority_sales_originate,crimea,transaction_num,transaction_amount,account_num,date_account_open}]" DataTable="[dt_page6]" DisplayName="Add Data Row Page 6" sap:VirtualizedContainerService.HintSize="338,195" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
+                        <ui:WriteRange AddHeaders="True" DataTable="[dt_page6]" DisplayName="Write Range Page 6" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteRange_7" SheetName="Sheet1" StartingCell="BZ1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2(2).xlsx" />
+                      </Sequence>
+                    </Sequence>
+                  </ui:IfElseIfBlock.Then>
+                </ui:IfElseIfBlock>
+                <ui:IfElseIfBlock BlockType="ElseIf" Condition="[count.Equals(7)]">
+                  <ui:IfElseIfBlock.Then>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="442,1141" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence sap:VirtualizedContainerService.HintSize="400,1051" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:BuildDataTable DataTable="[dt_page7]" DisplayName="Build Data Table Page 7" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_12" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Pre-requisites_x0020__x002F__x0020_Enquiry&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Watch_x0020_List&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Preliminary_x0020_Name_x0020_Screening&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Final_x0020_Name_x0020_Screening&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Preliminary_x0020_Risk_x0020_Scoring&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Final_x0020_Risk_x0020_Scoring&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;CIF_x0020_Creation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;KYC_x0020_Master_x0020_Update&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;KYC_x0020_Occurrence_x0020_Update&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Customer_x0020_Contact_x0020_Update&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Account_x0020_Creation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Address_x0020_Create_x002F_Update&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Address_x0020_Linking&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Connected_x0020_Parties_x0020_CIF_x0020_Creation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;FATCA&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;CRS&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;C2C_x0020_Tagging&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;SVS_x0020_Shell_x0020_Creation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Terms_x0020__x0026__x0020_Conditions&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Segment&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;OrgID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_1_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_1_x0020_Mobile&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_1_x0020_Email&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_1_x0020_User_x0020_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_1_x0020_Role&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_2_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_2_x0020_Mobile&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_2_x0020_Email&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_2_x0020_User_x0020_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_2_x0020_Role&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+                        <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text Page 7" FileName="C:\Users\Admin\Downloads\MainREF_Form2.pdf" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ReadPDFText_10" Range="[count.ToString]" Text="[outputText]" />
+                        <ui:LogMessage DisplayName="Log Message Page 7" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[outputText]" />
+                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim list_string As New List(Of String)&#xD;&#xA;Dim regex As Regex = New System.Text.RegularExpressions.Regex(&quot;(((?&lt;=Pre-requisites / Enquiry )(.|\n)*(?=Watch List))|((?&lt;=Watch List )+(.|\n)*(?=Preliminary Name Screening))|((?&lt;=Preliminary Name Screening )+(.|\n)*(?=Final Name Screening))|((?&lt;=Final Name Screening )+(.|\n)*(?=Preliminary Risk Scoring))|((?&lt;=Preliminary Risk Scoring )+(.|\n)*(?=Final Risk Scoring))|((?&lt;=Final Risk Scoring )+(.|\n)*(?=CIF Creation))|((?&lt;=CIF Creation )+(.|\n)*(?=KYC Master Update))|((?&lt;=KYC Master Update )+(.|\n)*(?=KYC Occurrence Update))|((?&lt;=KYC Occurrence Update )+(.|\n)*(?=Customer Contact Update))|((?&lt;=Customer Contact Update )+(.|\n)*(?=Account Creation))|((?&lt;=Account Creation ).*)|((?&lt;=Address Create/Update )+(.|\n)*(?=Address Linking))|((?&lt;=Address Linking )+(.|\n)*(?=Connected Parties))|((?&lt;=Connected Parties CIF ).*)|((?&lt;=FATCA )+(.|\n)*(?=CRS))|((?&lt;=CRS )+(.|\n)*(?=C2C Tagging))|((?&lt;=C2C Tagging )+(.|\n)*(?=SVS Shell Creation))|((?&lt;=SVS Shell Creation ).*)|((?&lt;=Terms &amp; Conditions ).*)|((?&lt;=Segment )+(.|\n)*(?=OrgID))|((?&lt;=OrgID )+(.|\n)*(?=User 1 Name))|((?&lt;=User 1 Name )+(.|\n)*(?=User 1 Mobile))|((?&lt;=User 1 Mobile )+(.|\n)*(?=User 1 Email))|((?&lt;=User 1 Email )+(.|\n)*(?=User 1 User ID))|((?&lt;=User 1 User ID )+(.|\n)*(?=User 1 Role))|((?&lt;=User 1 Role )+(.|\n)*(?=User 2 Name))|((?&lt;=User 2 Name)+(.|\n)*(?=User 2 Mobile))|((?&lt;=User 2 Mobile)+(.|\n)*(?=User 2 Email))|((?&lt;=User 2 Email)+(.|\n)*(?=User 2 User ID))|((?&lt;=User 2 User ID)+(.|\n)*(?=User 2 Role))|((?&lt;=User 2 Role).*))&quot;)&#xD;&#xA;Dim m As System.Text.RegularExpressions.Match&#xD;&#xA;&#xD;&#xA;For Each m In regex.Matches(output)&#xD;&#xA;            list_string.Add(m.Value)&#xD;&#xA;&#x9;&#x9;&#x9;Next&#xD;&#xA;&#xD;&#xA;pre_requisites = list_string(0).ToString&#xD;&#xA;watch_list = list_string(1).ToString&#xD;&#xA;preliminary_name_screening = list_string(2).ToString&#xD;&#xA;final_name_screening = list_string(3).ToString&#xD;&#xA;preliminary_risk_scoring = list_string(4).ToString&#xD;&#xA;final_risk_scoring = list_string(5).ToString&#xD;&#xA;cif_creation = list_string(6).ToString&#xD;&#xA;kyc_master_update = list_string(7).ToString&#xD;&#xA;kyc_occurrence_update = list_string(8).ToString&#xD;&#xA;customer_contact_update = list_string(9).ToString&#xD;&#xA;account_creation = list_string(10).ToString&#xD;&#xA;address_create_update = list_string(11).ToString&#xD;&#xA;address_linking = list_string(12).ToString&#xD;&#xA;connected_parties = list_string(13).ToString&#xD;&#xA;fatca = list_string(14).ToString&#xD;&#xA;crs = list_string(15).ToString&#xD;&#xA;c2c_tag = list_string(16).ToString&#xD;&#xA;svs_shell_creation = list_string(17).ToString&#xD;&#xA;terms_conditions = list_string(18).ToString&#xD;&#xA;segment = list_string(19).ToString&#xD;&#xA;orgid = list_string(20).ToString&#xD;&#xA;user1name = list_string(21).ToString&#xD;&#xA;user1mobile = list_string(22).ToString&#xD;&#xA;user1email = list_string(23).ToString&#xD;&#xA;user1userid = list_string(24).ToString&#xD;&#xA;user1role = list_string(25).ToString&#xD;&#xA;user2name = list_string(26).ToString&#xD;&#xA;user2mobile = list_string(27).ToString&#xD;&#xA;user2email = list_string(28).ToString&#xD;&#xA;user2userid = list_string(29).ToString&#xD;&#xA;user2role = list_string(30).ToString" DisplayName="Invoke code Page 7" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_9">
+                          <ui:InvokeCode.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="output">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="outputText" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="pre_requisites">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="pre_requisites" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="watch_list">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="watch_list" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="preliminary_name_screening">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="preliminary_name_screening" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="final_name_screening">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="final_name_screening" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="preliminary_risk_scoring">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="preliminary_risk_scoring" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="final_risk_scoring ">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="final_risk_scoring" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="cif_creation">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="cif_creation" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="kyc_master_update">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="kyc_master_update" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="kyc_occurrence_update">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="kyc_occurrence_update" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="customer_contact_update">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="customer_contact_update" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="account_creation">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="account_creation" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="address_create_update">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="address_create_update" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="address_linking">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="address_linking" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="connected_parties">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="connected_parties" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="fatca ">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="fatca" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="crs">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="crs" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="c2c_tag">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="c2c_tag" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="svs_shell_creation">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="svs_shell_creation" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="terms_conditions">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="terms_conditions" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="segment">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="segment" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="orgid">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="orgid" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="user1name">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="user1name" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="user1mobile">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="user1mobile" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="user1email ">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="user1email" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="user1userid">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="user1userid" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="user1role">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="user1role" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="user2name">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="user2name" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="user2mobile">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="user2mobile" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="user2email">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="user2email" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="user2userid">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="user2userid" />
+                            </OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="user2role">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="user2role" />
+                            </OutArgument>
+                          </ui:InvokeCode.Arguments>
+                        </ui:InvokeCode>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{pre_requisites,watch_list,preliminary_name_screening,final_name_screening,preliminary_risk_scoring,final_risk_scoring,cif_creation,kyc_master_update,kyc_occurrence_update,customer_contact_update,account_creation,address_create_update,address_linking,connected_parties,fatca,crs,c2c_tag,svs_shell_creation,terms_conditions,segment,orgid,user1name,user1mobile,user1email,user1userid,user1role,user2name,user2mobile,user2email,user2userid,user2role}]" DataTable="[dt_page7]" DisplayName="Add Data Row Page 7" sap:VirtualizedContainerService.HintSize="338,195" sap2010:WorkflowViewState.IdRef="AddDataRow_8" />
+                        <ui:WriteRange AddHeaders="True" DataTable="[dt_page7]" DisplayName="Write Range Page 7" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteRange_8" SheetName="Sheet1" StartingCell="CU1" WorkbookPath="C:\Users\Admin\Downloads\MainREFolder\MainREF_Form2(2).xlsx" />
+                      </Sequence>
+                    </Sequence>
+                  </ui:IfElseIfBlock.Then>
+                </ui:IfElseIfBlock>
+              </sc:BindingList>
+            </ui:IfElseIf.ConditionBlocks>
+          </ui:IfElseIf>
+          <Assign sap:VirtualizedContainerService.HintSize="669,70" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:InterruptibleWhile.Body>
+    </ui:InterruptibleWhile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="747,352" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,264" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim regexCaseID As Regex = New System.Text.RegularExpressions.Regex(&quot;(?&lt;=Case Id )+(.|\n)*(?=Case Status)&quot;,RegexOptions.Multiline)&#xA;Dim regexCaseStatus As Regex = New System.Text.RegularExpressions.Regex(&quot;(?&lt;=Case Status ).*&quot;)&#xA;Dim regexCaseStarted As Regex = New System.Text.RegularExpressions.Regex(&quot;(?&lt;=Date / Time Stamp \(Case )(.|\n)*(?=Started)&quot;,RegexOptions.Multiline)&#xA;Dim regexCaseSubmitted As Regex = New System.Text.RegularExpressions.Regex(&quot;(?&lt;=Started\))(.|\n)*(?=Submitted)&quot;,RegexOptions.Multiline)&#xA;Dim regexFlow As Regex = New System.Text.RegularExpressions.Regex(&quot;(?&lt;=Flow )(.|\n)*(?=Drop-Off)&quot;,RegexOptions.Multiline)&#xA;Dim regexDropOffReason As Regex = New System.Text.RegularExpressions.Regex(&quot;(?&lt;=Drop-Off Reason )(.|\n)*(?=Source 1)&quot;,RegexOptions.Multiline)&#xA;Dim regexSource1 As Regex = New System.Text.RegularExpressions.Regex(&quot;(?&lt;=Source 1 )(.|\n)*(?=Source 2)&quot;,RegexOptions.Multiline)&#xA;Dim regexSource2 As Regex = New System.Text.RegularExpressions.Regex(&quot;(?&lt;=Source 2 )(.|\n)*(?=Reference)&quot;,RegexOptions.Multiline)&#xA;Dim regexRefCode As Regex = New System.Text.RegularExpressions.Regex(&quot;(?&lt;=Reference Code \(For Bank use).*&quot;)&#xA;&#xA;Dim matchCaseID As Match = regexCaseID.Match(output)&#xA;Dim matchCaseStatus As Match = regexCaseStatus.Match(output)&#xA;Dim matchCaseStarted As Match = regexCaseStarted.Match(output)&#xA;Dim matchCaseSubmitted As Match = regexCaseSubmitted.Match(output)&#xA;Dim matchFlow As Match = regexFlow.Match(output)&#xA;Dim matchDropOffReason As Match = regexDropOffReason.Match(output)&#xA;Dim matchSource1 As Match = regexSource1.Match(output)&#xA;Dim matchSource2 As Match = regexSource2.Match(output)&#xA;Dim matchRefCode As Match = regexRefCode.Match(output)&#xA;&#xA;If matchCaseID.Success Then&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of Case ID: [{0}]&quot;, matchCaseID.Value)&#xA;&#x9;&#x9;case_id = matchCaseID.Value&#xA;&#x9;End If&#xA;&#x9;&#xA;If matchCaseStatus.Success Then&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of Case Status: [{0}]&quot;, matchCaseStatus.Value)&#xA;&#x9;&#x9;case_status = matchCaseStatus.Value&#xA;&#x9;End If&#xA;&#x9;&#xA;If matchCaseStarted.Success Then&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of Case Started: [{0}]&quot;, matchCaseStarted.Value)&#xA;&#x9;&#x9;case_started = matchCaseStarted.Value&#xA;&#x9;End If&#xA;&#x9;&#xA;If matchCaseSubmitted.Success Then&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of Case Submitted: [{0}]&quot;, matchCaseSubmitted.Value)&#xA;&#x9;&#x9;case_submitted = matchCaseStarted.Value&#xA;&#x9;&#x9;case_submitted = case_submitted.Replace(&quot;Date / Time Stamp (Case &quot;,&quot;&quot;)&#xA;&#x9;End If&#xA;&#x9;&#xA;If matchFlow.Success Then&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of flow: [{0}]&quot;, matchFlow.Value)&#xA;&#x9;&#x9;flow = matchFlow.Value&#xA;&#x9;End If&#xA;&#x9;&#xA;If matchDropOffReason.Success Then&#xA;&#x9;&#x9;Console.WriteLine(&quot;RESULT of drop-off reason: [{0}]&quot;, matchDropOffReason.Value)&#xA;&#x9;&#x9;dropoffreason = matchDropOffReason.Value&#xA;&#x9;End If&#xA;&#x9;&#xA;If matchSource1.Success Then&#xA;&#x9;Console.WriteLine(&quot;RESULT of source 1: [{0}]&quot;, matchSource1.Value)&#xA;&#x9;source1 = matchSource1.Value&#xA;End If&#xA;&#xA;If matchSource2.Success Then&#xA;&#x9;Console.WriteLine(&quot;RESULT of source 2: [{0}]&quot;, matchSource2.Value)&#xA;&#x9;source2 = matchSource2.Value&#xA;End If&#xA;&#xA;If matchRefCode.Success Then&#xA;&#x9;Console.WriteLine(&quot;RESULT of Reference Code: [{0}]&quot;, matchRefCode.Value)&#xA;&#x9;ref_code = matchRefCode.Value&#xA;End If&#xA;&#xA;&#xA;                " DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="358,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="output">[outputText]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="case_id">[case_id]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="case_status">[case_status]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="case_started">[case_started]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="case_submitted">[case_submit]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="flow">[flow]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="dropoffreason">[dropoffreason]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="source1">[source1]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="source2">[source2]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="ref_code">[ref_code]</OutArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>
